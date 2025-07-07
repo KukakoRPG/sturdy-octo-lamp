@@ -1,0 +1,63 @@
+{
+    "serverAddress": "∑MAINT",
+    "serverName": "∑-Station Maintenance Terminal",
+    "iconName": "sigma.png",
+    "iconSize" : 200,
+    "iconClass": "glitch",
+    "terminalID": "∑MAINT",
+    "defaultUser": {
+        "userId": "guest0",
+        "password": "",
+        "userName": "Guest"
+    },
+    "initialHistory": {
+        "Sonya1": [
+            "mail",
+            "read 3",
+            "callelv"
+        ],
+        "Ashraf2": [
+            "mail",
+            "read 3",
+            "callelv"
+        ],
+        "Dana3": [
+            "mail",
+            "read 3",
+            "callelv"
+        ],
+        "Jerome4": [
+            "mail",
+            "read 3",
+            "callelv"
+        ],
+        "Kantaro5": [
+            "mail",
+            "read 3",
+            "callelv"
+        ],
+        "Morgan6": [
+            "mail",
+            "read 3",
+            "callelv"
+        ],
+        "Rie7": [
+            "mail",
+            "read 3",
+            "callelv"
+        ],
+        "Rosa8": [
+            "mail",
+            "read 3",
+            "callelv"
+        ],
+        "Mike9": [
+            "mail",
+            "read 3",
+            "callelv"
+        ],
+        "guest0": [
+            "help"
+        ]
+    }
+}

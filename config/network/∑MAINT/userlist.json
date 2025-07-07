@@ -1,0 +1,52 @@
+[
+    {
+        "userId": "Sonya1",
+        "password": "ADM1991",
+        "userName": "Sonya1"
+    },
+    {
+        "userId": "Ashraf2",
+        "password": "Ashraf22",
+        "userName": "Ashraf2"
+    },
+    {
+        "userId": "Dana3",
+        "password": "Dana3333",
+        "userName": "Dana3"
+    },
+    {
+        "userId": "Jerome4",
+        "password": "Jerome4",
+        "userName": "Jerome4"
+    },
+    {
+        "userId": "Kantaro5",
+        "password": "Kantaro5",
+        "userName": "Kantaro5"
+    },
+    {
+        "userId": "Morgan6",
+        "password": "Morgan6",
+        "userName": "Morgan6"
+    },
+    {
+        "userId": "Rie7",
+        "password": "Rie7",
+        "userName": "Rie7"
+    },
+    {
+        "userId": "Rosa8",
+        "password": "Rosa8",
+        "userName": "Rosa8"
+    },
+    {
+        "userId": "Mike9",
+        "password": "Mike9",
+        "userName": "Mike9"
+    },
+    {
+        "userId": "guest0",
+        "password": "guest",
+        "userName": "Guest"
+    }
+]

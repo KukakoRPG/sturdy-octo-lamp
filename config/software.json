@@ -1,0 +1,113 @@
+{ 
+    "notice": {
+        "location": ["∑MAINT"],
+        "protection":["Sonya1","Ashraf2","Dana3","Jerome4","Kantaro5","Morgan6","Rie7","Rosa8","Mike9"],
+        "delayed": 2000,
+        "message": [
+            "===============================================================",
+            "  ",
+            "09E9070D6CCC - Alpha-4 : Arrive :: PLAYERS",
+            "09E9051D5443 - Bay 1 : Arrive :: Heracles",
+            "09E904028B33 - Bay 2 : Depart :: Trenxal",
+            "09E90314AEBD - Bay 2 : Arrive :: Trenxal",
+            "  ",
+            "==============================================================="
+        ],
+        "help":"Shows docking bay activity for the last 6 months."
+    },
+    "diagnose": {
+        "location": ["∑MAINT"],
+        "protection":["Sonya1","Ashraf2","Dana3","Jerome4","Kantaro5","Morgan6","Rie7","Rosa8","Mike9"],
+        "clear": true,
+        "delayed": 2000,
+        "message": [
+            "===============================================================",
+            "  ",
+            "CHECKING LIFE SUPPORT.......... DONE.",
+            "CHECKING MAIN SYSTEMS.......... DONE.",
+            "  ",
+            "<div class=\"warning-text\">WARNING: AIRFLOW 81.5%. CHECK CREW QUARTERS VENTS FOR BLOCKAGE.</div>",
+            "<div class=\"warning-text\">WARNING: SHOWER #4 NON-FUNCTIONAL AS OF 1 DAY(S).</div>",
+            "  ",
+            "<div class=\"notice-text\">NOTICE: AIR FILTERS REPLACED 421 DAY(S) AGO.</div>",
+            "<div class=\"notice-text\">NOTICE: MINESHAFT LIFT MAINTAINED 421 DAY(S) AGO.</div>",
+            "  ",
+            "SUMMARY:",
+            "<p class=desync>ALL SYSTEMS OPERATING WITHIN ACCEPTABLE PARAMETERS.</p>",
+            "==============================================================="
+        ],
+        "help":"Runs system diagnostics and shows warnings."
+    },
+    "callelv": {
+        "location": ["∑MAINT"],
+        "protection":["Sonya1","Ashraf2","Dana3","Jerome4","Kantaro5","Morgan6","Rie7","Rosa8","Mike9"],
+        "clear": true,
+        "delayed": 2000,
+        "message": [
+            "===============================================================",
+            "  ",
+            "CALLING ELEVATOR.......... DONE.",
+            "ESTIMATED TRAVEL TIME 10 MINUTES",
+            "PLEASE WAIT ...",
+            "...",
+            "...",
+            "...",
+            "==============================================================="
+        ],
+        "help":"Calls the main elevator to your floor."
+    },
+    "idlist": {
+        "location": ["∑MAINT"],
+        "clear": true,
+        "protection":["Sonya1","Ashraf2","Dana3","Jerome4","Kantaro5","Morgan6","Rie7","Rosa8","Mike9"],
+        "help": "Returns a list of registered user ids for this terminal.",
+        "message": ["Sonya1","Ashraf2","Dana3","Jerome4","Kantaro5","Morgan6","Rie7","Rosa8","Mike9","guest0"]
+    },
+    "map": {
+        "location":["∑MAINT"],
+        "clear": true,
+        "protection":["Sonya1","Ashraf2","Dana3","Jerome4","Kantaro5","Morgan6","Rie7","Rosa8","Mike9"],
+        "help": "Employee map for induction purposes.",
+        "message": [
+            "████████████████████████████████████████████████████████",
+            "█                                                      █",
+            "█                       ∑-STATION                      █",
+            "█                                                      █",
+            "████████████████████████████████████████████████████████",
+            "█      DOCK1         DOCK2                             █",
+            "█      ■             ■                                 █",
+            "█      ■             ■                                 █",
+            "█╭────╼╫╾───────────╼╫╾────╮  ╭─┬─┬─┬─╮    ╭─────────╮ █",
+            "█│ ≒≒       >_          ⍬⍬ │  │8⍆ │9│0│    │ ○○○○○ ☖ │ █",
+            "█│ ≒≒                   ⍬⍬ │  ├─┤ ╰⍖┴⍖┤    │  MESS   │ █",
+            "█│         WORKSPACE       │  │7⍆     ╰────╯  HALL   │ █",
+            "█│                         ╰──┴─╯     ╭─┬──╮ ○○○○○ ⌼ │ █",
+            "█│  ▲▲⊒═╗  ░░░░░░░         ╭──┬─╮     ⍅1│  ╰─────────╯ █",
+            "█│ ▲▲⊒═╗   ░     ░     ⊓  ⊓│  │6⍆     │♬│  ╭─────────╮ █",
+            "█│  ▲▲⊒═╗  ░  ⇅  ░     ⊓  ⊓│  ├─┤     ╰─┴──╯  ≋≋≋≋≋  │ █",
+            "█│ ▲▲⊒═╗   ░     ░     ⊓  ⊓│  │5⍆     ╭────╮  ─────  │ █",
+            "█│  ▲▲⊒═╗  ░░░░░░░     ⊓  ⊓│  ├─┤ ╭⍏┬⍏┤    │         │ █",
+            "█│                     ⊓  ⊓│  │4⍆ │3│2│    │ │ │ │ │ │ █",
+            "█╰─────────────────────────╯  ╰─┴─┴─┴─╯    ╰─┴─┴─┴─┴─╯ █",
+            "█             ■⇅              QUARTERS      WASHROOM   █",
+            "█            ╭──╮                                      █",
+            "█            ╪  │MINESHAFT                             █",
+            "█            ╰──╯                                      █",
+            "████████████████████████████████████████████████████████",
+            "█          LEGEND          █           ROSTER          █",
+            "█                          █                           █",
+            "█      >_ TERMINAL         █   1 SONYA    6 MORGAN     █",
+            "█                          █   2 ASHRAF   7 RIE        █",
+            "█      ╫  AIRLOCK          █   3 DANA     8 ROSA       █",
+            "█      ■  SHAFT            █   4 JEROME   9 MIKE       █",
+            "█      ⇅  ELEVATOR         █   5 KANTARO  0 N/A        █",
+            "█      ≒  MEDICAL          █                           █",
+            "█      ⍆  DOOR             █████████████████████████████",
+            "█      ⍬  GENERATOR        █             █             █",
+            "█      ⊓  CUBBY            █   DOCK 1    █    DOCK 2   █",
+            "█      ⊒  STACKER          █  HERACLES   █   RESUPPLY  █",
+            "█                          █             █             █",
+            "████████████████████████████████████████████████████████"
+        ]
+    }
+}

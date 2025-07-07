@@ -1,0 +1,17 @@
+[
+    {
+        "userId": "player1",
+        "password": "pass",
+        "userName": "player1"
+    },
+    {
+        "userId": "player2",
+        "password": "pass",
+        "userName": "player2"
+    },
+    {
+        "userId": "player3",
+        "password": "pass",
+        "userName": "player3"
+    }
+]

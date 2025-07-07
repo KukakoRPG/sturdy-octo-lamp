@@ -1,0 +1,26 @@
+{
+    "serverAddress": "icarus",
+    "serverName": "Icarus Terminal CB1",
+    "iconName": "icarus.png",
+    "iconSize" : 200,
+    "terminalID": "icarus",
+    "defaultUser": {
+        "userId": "guest0",
+        "password": "",
+        "userName": "Guest"
+    },
+    "initialHistory": {
+        "player1": [
+            "help"
+        ],
+        "player2": [
+            "help"
+        ],
+        "player3": [
+            "help"
+        ],
+        "guest0": [
+            "help"
+        ]
+    }
+}

@@ -1,0 +1,50 @@
+[
+    {
+        "from": "EMBERPEAK Job Bulletin",
+        "to": ["player1","player2","player3"],
+        "title": "Ember Peak Mining & Logistics – DF-3911 Cargo Retrieval",
+        "body": [
+            "Hello Crew,",
+            "",
+            "Ember Peak has secured a straightforward cargo run that plays to your strengths. You’ll be picking up three standard 1.2 m³ sealed containers from ∑-Station (dock bay Alpha-4) in the DF-3911 system. Two containers hold Vainglory Metal Rods—extremely hard yet brittle alloys prized in high-precision starship thrusters—and one container holds 50 kg of cut Barium Nitrate crystals, used in mining-grade detonator charges.",
+            "",
+            "",
+            "Pickup Instructions:",
+            "",
+            "    Dock at ∑-Station, DF-3911, Bay Alpha-4",
+            "    Secure each container with double-shock dampeners",
+            "    Maintain internal temperature between 2 °C and 8 °C for the nitrate",
+            "",
+            "Delivery Instructions:",
+            "",
+            "    Rendezvous with Orbital Relay-09 in the QR-4405 system",
+            "    Delivery window opens Galactic Date 512.14 and closes 512.18",
+            "    Docking clearance code “EP-Δ7” will be issued two hours before arrival",
+            "",
+            "Compensation & Bonuses:",
+            "",
+            "    Base Pay: 4,000 ₢ upon manifest upload",
+            "    Punctuality Bonus: 1,000 ₢ for delivery before 512.17",
+            "    Hazard Bonus: 300 ₢ for flawless container integrity",
+            "",
+            "Warnings & Hazards:",
+            "",
+            "    QR-4405 orbital lanes suffer intermittent electromagnetic flares—expect comms blackouts",
+            "    Barium Nitrate dust can ignite if exposed to static discharge—use grounded handling gear",
+            "",
+            "Report departure window and estimated ETA to Ember Peak Ops so we can clear your route. Payment will be wired to your ship’s ledger upon confirmation of cargo integrity.",
+            "",
+            "Fly safe, Rian Kestrel Logistics Officer, Ember Peak Mining & Logistics"
+        ]
+    },
+    {
+        "from": "StellarSpice Café",
+        "to": ["player1","player2","player3"],
+        "title": "Offer you can't refuse!",
+        "body": [
+            "Recharge in most stations of the known space!",
+            "  House-blend swill, neural-boost pastries, and zero-g bioluminescent seating.",
+            "    Show your ship’s transponder for a free “Starfire Espresso.”"
+        ]
+    }
+]

@@ -10,10 +10,10 @@
         "userName": "Guest"
     },
     "initialHistory": {
-        "player1": [
+        "guest0": [
             "help"
         ],
-        "player2": [
+        "karp": [
             "help"
         ],
         "player3": [

@@ -1,7 +1,7 @@
 [
     {
         "from": "EMBERPEAK Job Bulletin",
-        "to": ["player1","player2","player3"],
+        "to": ["karp","player2","player3"],
         "title": "Ember Peak Mining & Logistics – DF-3911 Cargo Retrieval",
         "body": [
             "Hello Crew,",
@@ -39,7 +39,7 @@
     },
     {
         "from": "StellarSpice Café",
-        "to": ["player1","player2","player3"],
+        "to": ["karp","player2","player3"],
         "title": "Offer you can't refuse!",
         "body": [
             "Recharge in most stations of the known space!",

@@ -1,6 +1,6 @@
 [
     {
-        "from": "EMBERPEAK Job Bulletin",
+        "from": "auto-mailer@emberpeak.jobbulletin.00d",
         "to": ["karp","player2","player3"],
         "title": "Ember Peak Mining & Logistics – DF-3911 Cargo Retrieval",
         "body": [
@@ -38,13 +38,64 @@
         ]
     },
     {
-        "from": "StellarSpice Café",
+        "from": "auto.mailer@infometrics.stellarcafe.a0d",
         "to": ["karp","player2","player3"],
         "title": "Offer you can't refuse!",
         "body": [
             "Recharge in most stations of the known space!",
             "  House-blend swill, neural-boost pastries, and zero-g bioluminescent seating.",
-            "    Show your ship’s transponder for a free “Starfire Espresso.”"
+            "    Show your ship’s transponder for a free “Starfire Espresso.”",
+            "",
+            "This is an automated message. Do not reply."
+        ]
+    },
+    {
+        "from": "noreply@horizons.data.00d",
+        "to": ["karp","player2","player3"],
+        "title": "‼️ YOUR SHIP'S REGISTRATION IS EXPIRING ‼️",
+        "body": [
+            "Pan-Corporate Fleet Authority",
+            "Safety. Compliance. Order.",
+            "",
+            "NOTICE: Our records indicate that the commercial vessel Icarus (M-Class Freighter, Reg. #GHY-34982-C) has an outstanding registration fee of ₢8,500 Credits.",
+            "",
+            "Failure to remit payment within one standard cycle will result in the invalidation of your trans-system flight license and a warrant being issued for your vessel's impoundment.",
+            "",
+            "CLICK HERE TO PAY SECURELY VIA CRYPTO-TRANSFER",
+            "<p class=desync></p><LINK CORRUPTED></p>",
+            "",
+            "This is an automated message. Do not reply."
+        ]
+    },
+    {
+        "from": "<p class=desync></p><ID_UNKNOWN_ENCRYPTED></p>",
+        "to": [""],
+        "title": "URGENT - WRONG RECIPIENT - IGNORE",
+        "body": [
+            "<",
+            "...the package is on the move. I repeat, the Icarus has the package. The Vainglory rods are a clever decoy, but my source confirms the Barium Nitrate container has a false bottom. The real cargo is nested inside. They don't know what they're carrying.",
+            "",
+            "Maintain surveillance. Do not engage until they reach the drop point at Tartarus Point. The buyer wants the asset, not the couriers. If the crew of the Icarus becomes aware, silence them. No witnesses.",
+            "",
+            "<"
+        ]
+    },
+     {
+        "from": "anya.karpov@hub.civicnet.00d",
+        "to": ["karp"],
+        "title": "Hey Anatoli - Urgent!",
+        "body": [
+            "Hey Anatoli,",
+            "",
+            "It’s Anya. Heard you're off on another cargo run. Stay safe out there, okay? Mom's been worried sick since that incident on Kepler-186f – you know, the one with the… well, never mind. Just call us when you can.",
+            "",
+            "Listen, I need a favor. My comm unit finally kicked the bucket, and I can't afford a new one right now. If you make some good credits on this trip, could you maybe send me 500 ₢? It would be a lifesaver. I'll pay you back, I promise!",
+            "",
+            "Anyway, gotta go. The shift starts soon. Love you!",
+            "",
+            "Anya"
         ]
     }
+
+    
 ]

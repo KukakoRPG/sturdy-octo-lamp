@@ -6,10 +6,10 @@
         "message": [
             "===============================================================",
             "  ",
-            "09E9070D6CCC - Alpha-4 : Arrive :: PLAYERS",
-            "09E9051D5443 - Bay 1 : Arrive :: Heracles",
-            "09E904028B33 - Bay 2 : Depart :: Trenxal",
-            "09E90314AEBD - Bay 2 : Arrive :: Trenxal",
+            "09E9070D6CCC - Alpha-4 : Arrive :: Icarus",
+            "09E9051D5443 - Beta-4  : Arrive :: Heracles",
+            "09E904028B33 - Alpha-4 : Depart :: Trenxal",
+            "09E90314AEBD - Alpha-4 : Arrive :: Trenxal",
             "  ",
             "==============================================================="
         ],
@@ -46,9 +46,9 @@
         "message": [
             "===============================================================",
             "  ",
-            "CALLING ELEVATOR.......... DONE.",
+            "CALLING ELEVATOR....<p class=desync>.....</p>. DONE.",
             "ESTIMATED TRAVEL TIME 10 MINUTES",
-            "PLEASE WAIT ...",
+            "<p class=desync>PLEASE</p> WAIT ...",
             "...",
             "...",
             "...",
@@ -74,7 +74,7 @@
             "█                       ∑-STATION                      █",
             "█                                                      █",
             "████████████████████████████████████████████████████████",
-            "█      DOCK1         DOCK2                             █",
+            "█      BETA-4        ALPHA-4                           █",
             "█      ■             ■                                 █",
             "█      ■             ■                                 █",
             "█╭────╼╫╾───────────╼╫╾────╮  ╭─┬─┬─┬─╮    ╭─────────╮ █",
@@ -104,8 +104,8 @@
             "█      ≒  MEDICAL          █                           █",
             "█      ⍆  DOOR             █████████████████████████████",
             "█      ⍬  GENERATOR        █             █             █",
-            "█      ⊓  CUBBY            █   DOCK 1    █    DOCK 2   █",
-            "█      ⊒  STACKER          █  HERACLES   █   RESUPPLY  █",
+            "█      ⊓  CUBBY            █   BETA-4    █   ALPHA-4   █",
+            "█      ⊒  STACKER          █  HERACLES   █    ICARUS   █",
             "█                          █             █             █",
             "████████████████████████████████████████████████████████"
         ]

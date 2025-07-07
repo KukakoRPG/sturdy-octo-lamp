@@ -385,7 +385,7 @@ system = {
             } else if ( args[ 0 ] === "htcdecode" ) {
                 resolve( [ "Usage:", "> htcdecode YYYYMMDDHHHH", "Converts a full HTC timestamp back to a standard date and time." ] );
             } else if ( args[ 0 ] === "htcencode" ) {
-                resolve( [ "Usage:", "> htcencode YYYY-MM-DDTHH:MM:SS", "Converts a standard date and time to a full HTC timestamp." ] );
+                resolve( [ "Usage:", "> htcencode YYYY-MM-DD HH:MM:SS", "Converts a standard date and time to a full HTC timestamp." ] );
             } else if ( args[ 0 ] === "history" ) {
                 resolve( [ "Usage:", "> history", "The history command will list all the commands you alread typed in this terminal." ] );
             } else if ( args[ 0 ] === "login" ) {
@@ -514,7 +514,7 @@ system = {
     htcencode( args ) {
         return new Promise( ( resolve ) => {
             if ( args.length === 0 || !args[ 0 ] || !args[ 0 ].includes( "T" ) ) {
-                resolve( "Usage: htcencode YYYY-MM-DDTHH:MM:SS" );
+                resolve( "Usage: htcencode YYYY-MM-DD HH:MM:SS" );
                 return;
             }
 

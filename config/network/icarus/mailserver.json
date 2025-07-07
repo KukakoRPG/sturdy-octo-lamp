@@ -73,9 +73,12 @@
         "title": "URGENT - WRONG RECIPIENT - IGNORE",
         "body": [
             "<",
-            "...the package is on the move. I repeat, the Icarus has the package. The Vainglory rods are a clever decoy, but my source confirms the Barium Nitrate container has a false bottom. The real cargo is nested inside. They don't know what they're carrying.",
+            "...the package is on the move. I repeat, the Icarus has the package. The Vainglory rods are a clever decoy,",
+            "but my source confirms the Barium Nitrate container has a false bottom.",
+            "The real cargo is nested inside. They don't know what they're carrying.",
             "",
-            "Maintain surveillance. Do not engage until they reach the drop point at Tartarus Point. The buyer wants the asset, not the couriers. If the crew of the Icarus becomes aware, silence them. No witnesses.",
+            "Maintain surveillance. Do not engage until they reach the drop point at Tartarus Point.",
+            "The buyer wants the asset, not the couriers. If the crew of the Icarus becomes aware, silence them. No witnesses.",
             "",
             "<"
         ]
@@ -87,9 +90,11 @@
         "body": [
             "Hey Anatoli,",
             "",
-            "It’s Anya. Heard you're off on another cargo run. Stay safe out there, okay? Mom's been worried sick since that incident on Kepler-186f – you know, the one with the… well, never mind. Just call us when you can.",
+            "It’s Anya. Heard you're off on another cargo run. Stay safe out there, okay?",
+            "I'Mom's been worried sick since that incident on Kepler-186f – you know, the one with the… well, never mind. Just call us when you can.",
             "",
-            "Listen, I need a favor. My comm unit finally kicked the bucket, and I can't afford a new one right now. If you make some good credits on this trip, could you maybe send me 500 ₢? It would be a lifesaver. I'll pay you back, I promise!",
+            "Listen, I need a favor. My comm unit finally kicked the bucket, and I can't afford a new one right now.",
+            "I If you make some good credits on this trip, could you maybe send me 500 ₢? It would be a lifesaver. I'll pay you back, I promise!",
             "",
             "Anyway, gotta go. The shift starts soon. Love you!",
             "",

@@ -2,21 +2,25 @@
     {
         "userId": "karp",
         "password": "pass",
-        "userName": "karp"
+        "userName": "karp",
+        "description": ""
     },
     {
         "userId": "player2",
         "password": "pass",
-        "userName": "player2"
+        "userName": "player2",
+        "description": ""
     },
     {
         "userId": "player3",
         "password": "pass",
-        "userName": "player3"
+        "userName": "player3",
+        "description": ""
     },
     {
         "userId": "guest0",
         "password": "guest",
-        "userName": "Guest"
+        "userName": "Guest",
+        "description": ""
     }
 ]

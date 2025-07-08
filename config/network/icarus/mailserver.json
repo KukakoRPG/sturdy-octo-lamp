@@ -45,6 +45,7 @@
             "Recharge in most stations of the known space!",
             "  House-blend swill, neural-boost pastries, and zero-g bioluminescent seating.",
             "    Show your ship’s transponder for a free “Starfire Espresso.”",
+            "",
             "<hr>",
             "This is an automated message. Do not reply."
         ]
@@ -63,6 +64,7 @@
             "",
             "CLICK HERE TO PAY SECURELY VIA CRYPTO-TRANSFER",
             "<p class=desync></p><LINK CORRUPTED></p>",
+            "",
             "<hr>",
             "This is an automated message. Do not reply."
         ]

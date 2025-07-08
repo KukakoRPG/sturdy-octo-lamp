@@ -1,0 +1,129 @@
+[
+    {
+        "from": "Sonya1@∑MAINT.mailer.d00",
+        "to": ["Ashraf2","Dana3","Jerome4","Kantaro5","Morgan6","Rie7","Rosa8","Mike9"],
+        "title": "Re: Shift Change - Loader 3 MALFUNCTION",
+        "body": [
+            "Team,",
+            "",
+            "Just a heads-up about the Loader 3 issue. Ashraf and Dana, thanks for the quick assessment.",
+            "Jerome, ensure that section is properly cordoned off and no one tries to “fix“ it on their own.",
+            "Kantaro and Morgan, you'll need to double-team on Loader 2 until Mike and Rosa can get a",
+            "proper look at it after their current deep scan.",
+            "",
+            "This isn't ideal, but we'll adapt. Safety first, everyone. Let's keep the core operations running",
+            "smoothly.",
+            "",
+            "Sonya"
+        ]
+    },
+    {
+        "from": "Rie7@∑MAINT.mailer.d00",
+        "to": ["Sonya1","Ashraf2","Dana3","Jerome4","Kantaro5","Morgan6","Rosa8","Mike9"],
+        "title": "Seriously, who left this?!",
+        "body": [
+            "Alright, which one of you clowns left a half-eaten nutrient paste tube in the main comms lounge",
+            "<b>again?!</b> And near the console, no less! You know how hard it is to get that gunk out of the",
+            "keyboard? This isn't your personal dumpster.",
+            "",
+            "Clean up after yourselves! We all share this space.",
+            "",
+            "Rie"
+        ]
+    },
+    {
+        "from": "Kantaro5@∑MAINT.mailer.d00",
+        "to": ["Morgan6"],
+        "title": "Found Him!",
+        "body": [
+            "Hey Morgan,",
+            "",
+            "Just wanted to let you know I found Prince. He somehow managed to get into the airlock",
+            "maintenance crawlspace near mess hall. Don't ask me how. Little rascal looked pretty",
+            "pleased with himself, too. I got him out, and he seems fine, just a bit dusty.",
+            "",
+            "Maybe keep a closer eye on him, man. Sonya's gonna lose it if she finds out he's been exploring",
+            "restricted areas. You know the rules about “unauthorized biologicals.“",
+            "",
+            "Kantaro"
+        ]
+    },
+    {
+        "from": "Dana3@∑MAINT.mailer.d00",
+        "to": ["Sonya1","Rosa8","Mike9"],
+        "title": "Idea for the East Vein!",
+        "body": [
+            "Sonya, Rosa, Mike,",
+            "",
+            "I've been reviewing the latest geological scans of the East Vein. I think we could significantly",
+            "increase our yield if we adjust the drilling angle by an additional 7 degrees on the next pass,",
+            "specifically through Sub-Sector E-4. The data suggests a denser concentration of the target",
+            "minerals there, but it'll require a bit more precision from Jerome and me.",
+            "",
+            "Thoughts? Happy to discuss this in person whenever you're free.",
+            "",
+            "Dana"
+        ]
+    },
+    {
+        "from": "Morgan6@∑MAINT.mailer.d00",
+        "to": ["Rie7"],
+        "title": "Re: Seriously, who left this?!",
+        "body": [
+            "Rie,",
+            "",
+            "Okay, okay, full disclosure. That might've been me. My bad! Prince got into my emergency rations",
+            "stash earlier and I was trying to distract him with the paste. He's got this way of looking at you,",
+            "you know? Like he hasn't eaten in weeks even though he just had his kibble.",
+            "",
+            "I'll clean it up first thing after my shift ends. Promise. And I'll even wipe down the whole console",
+            "for good measure. No hard feelings?",
+            "",
+            "Morgan"
+        ]
+    },
+    {
+        "from": "Rosa8@∑MAINT.mailer.d00",
+        "to": ["Sonya1"],
+        "title": "Request: Extra R&R Slot - Mike?",
+        "body": [
+            "Sonya,",
+            "",
+            "I'm writing to request an additional R&R slot for Mike this cycle, if at all possible. He's been",
+            "burning the candle at both ends with the deep scans and the Loader 3 diagnostic. I've noticed",
+            "him looking a bit more fatigued than usual, and I'm concerned about burnout impacting his focus,",
+            "especially with the upcoming E-4 adjustments Dana proposed.",
+            "",
+            "I can cover his shifts for the next 48 hours without issue, and I'm confident we won't fall behind. A",
+            "little extra downtime would do him a world of good and ensure he's operating at peak efficiency",
+            "when we really need him.",
+            "",
+            "Thanks for considering it.",
+            "",
+            "Rosa"
+        ]
+    },
+    {
+        "from": "Sonya1@∑MAINT.mailer.d00",
+        "to": ["Ashraf2","Dana3","Jerome4","Kantaro5","Morgan6","Rie7","Rosa8","Mike9"],
+        "title": "IMPORTANT: Upcoming Drill Bit Resupply - Your Input Needed!",
+        "body": [
+            "Team,",
+            "",
+            "The quarterly resupply for drill bits is scheduled for arrival. As you know, proper bit",
+            "selection is crucial for efficiency and minimizing downtime.",
+            "",
+            "I need everyone to review the current inventory and submit any specific requests or",
+            "recommendations for new bit types/quantities by end of day. Dana and Jerome, your ",
+            "input on the cutting head designs will be particularly valuable given the recent material variations",
+            "little extra downtime would do him a world of good and ensure he's operating at peak efficiency",
+            "we've encountered. Ashraf, let me know if there are any specific breaking bits you've found more",
+            "effective.",
+            "",
+            "The sooner we get your input, the more likely we are to get exactly what we need to keep ",
+            "operations running smoothly.",
+            "",
+            "Sonya"
+        ]
+    }
+]

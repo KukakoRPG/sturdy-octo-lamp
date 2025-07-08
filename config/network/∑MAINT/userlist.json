@@ -2,51 +2,67 @@
     {
         "userId": "Sonya1",
         "password": "ADM1991",
-        "userName": "Sonya1"
+        "userName": "SonyaH",
+        "description": "Sonya Hurtz, Team Leader"
     },
     {
         "userId": "Ashraf2",
         "password": "--",
-        "userName": "Ashraf2"
+        "userName": "AshrafH",
+        "description": "Ashraf Higani, Breaker"
     },
     {
         "userId": "Dana3",
         "password": "--",
-        "userName": "Dana3"
+        "userName": "DanaF",
+        "description": "Dana Flores, Head Driller"
     },
     {
         "userId": "Jerome4",
         "password": "--",
-        "userName": "Jerome4"
+        "userName": "JeromeF",
+        "description": "Jerome Flores, Asst. Driller"
     },
     {
         "userId": "Kantaro5",
         "password": "--",
-        "userName": "Kantaro5"
+        "userName": "KantaroY",
+        "description": "Kantaro Yorozaki, Loader"
     },
     {
         "userId": "Morgan6",
         "password": "Prince!",
-        "userName": "Morgan6"
+        "userName": "MorganX",
+        "description": "Morgan Xaviet, Loader"
     },
     {
         "userId": "Rie7",
         "password": "--",
-        "userName": "Rie7"
+        "userName": "RieC",
+        "description": "Rie Crust, Putter"
     },
     {
         "userId": "Rosa8",
         "password": "--",
-        "userName": "Rosa8"
+        "userName": "RosaD",
+        "description": "Rosa D'Amelia, Mining Engineer"
     },
     {
         "userId": "Mike9",
         "password": "--",
-        "userName": "Mike9"
+        "userName": "MikeS",
+        "description": "Mike Stogen, Mining Engineer"
     },
     {
         "userId": "guest0",
         "password": "guest",
-        "userName": "Guest"
+        "userName": "GuestA",
+        "description": "Guest Account"
+    },
+    {
+        "userId": "dreg",
+        "password": "an0maly",
+        "userName": "EthanG",
+        "description": "Dr. Ethan Giovanni, Geologist"
     }
 ]

@@ -12,48 +12,41 @@
     },
     "initialHistory": {
         "Sonya1": [
-            "mail",
-            "read 3",
-            "callelv"
+            "diagnose",
+            "notice",
+            "mail"
         ],
         "Ashraf2": [
             "mail",
-            "read 3",
-            "callelv"
+            "read 0"
         ],
         "Dana3": [
-            "mail",
-            "read 3",
-            "callelv"
+            "map",
+            "mail"
         ],
         "Jerome4": [
             "mail",
-            "read 3",
-            "callelv"
+            "read 0"
         ],
         "Kantaro5": [
             "mail",
-            "read 3",
-            "callelv"
+            "read 2"
         ],
         "Morgan6": [
+            "callelv",
             "mail",
-            "read 3",
-            "callelv"
+            "read 1"
         ],
         "Rie7": [
             "mail",
-            "read 3",
-            "callelv"
+            "read 4"
         ],
         "Rosa8": [
             "mail",
-            "read 3",
-            "callelv"
+            "read 5"
         ],
         "Mike9": [
             "mail",
-            "read 3",
             "callelv"
         ],
         "guest0": [

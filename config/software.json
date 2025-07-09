@@ -111,12 +111,15 @@
         ]
     },
     "cowsay": {
+        "location":["∑MAINT"],
         "help": "A cow says what you want it to say. Usage: cowsay <message>"
     },
     "guess": {
+        "location":["∑MAINT"],
         "help": "Starts a number guessing game."
     },
     "plasma": {
+        "location":["∑MAINT"],
         "help": "Displays a cool visual effect."
     }
 }

@@ -109,5 +109,14 @@
             "█                          █             █             █",
             "████████████████████████████████████████████████████████"
         ]
+    },
+    "cowsay": {
+        "help": "A cow says what you want it to say. Usage: cowsay <message>"
+    },
+    "guess": {
+        "help": "Starts a number guessing game."
+    },
+    "plasma": {
+        "help": "Displays a cool visual effect."
     }
 }

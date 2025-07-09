@@ -109,17 +109,5 @@
             "█                          █             █             █",
             "████████████████████████████████████████████████████████"
         ]
-    },
-    "cowsay": {
-        "location":["icarus"],
-        "help": "A cow says what you want it to say. Usage: cowsay <message>"
-    },
-    "guess": {
-        "location":["icarus"],
-        "help": "Starts a number guessing game."
-    },
-    "plasma": {
-        "location":["icarus"],
-        "help": "Displays a cool visual effect."
     }
 }

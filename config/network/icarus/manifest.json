@@ -1,6 +1,7 @@
 {
     "serverAddress": "icarus",
-    "serverName": "Icarus Terminal CB1",
+    "serverName": "SRV Icarus",
+    "description": "Salvage and Retrieval Vessel",
     "iconName": "icarus.png",
     "iconSize" : 200,
     "terminalID": "icarus",

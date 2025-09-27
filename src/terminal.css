@@ -32,9 +32,15 @@ body {
 #container output pre {
   margin: 0;
 }
+/* This is the primary rule for all output paragraphs.
+   It sets the font, color, and word-wrapping behavior. */
 #container output p {
-  margin: 2px 0;
-  line-height: 1.2;
+  /* Merged styles for consistent output */
+  font-family: 'VT323', 'Andale Mono', 'Courier New', Courier, monospace;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  margin: 0;
   max-width: 256ch;
   word-wrap: break-word;
 }
@@ -333,40 +339,3 @@ body {
       0px -10px 100px #7b96b8, 0px -10px 100px #7b96b8;
   }
 }
- /* General terminal styling */
- output {
-    font-family: 'VT323', 'Andale Mono', 'Courier New', Courier, monospace;
-    font-size: 16px;
-    line-height: 1.25;
-    color: #fff;
- }
- 
- /* Add word wrapping to all paragraph elements inside the output */
- output p {
-    max-width: 256ch;
-    word-wrap: break-word;
-    margin: 0; /* To avoid extra spacing between wrapped lines */
- }
- 
- .warning-text {
-    color: #ffcc00;
- }
- 
- .notice-text {
-    color: #66ccff;
- }
- 
- .comment {
-    color: #888;
- }
- 
- .ascii-map {
-    font-family: 'VT323', 'Andale Mono', 'Courier New', Courier, monospace;
-    white-space: pre;
-    line-height: 1;
- }
- 
- .desync {
-    position: relative;
-    display: inline-block;
- }

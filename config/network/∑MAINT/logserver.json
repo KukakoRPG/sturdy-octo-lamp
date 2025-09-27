@@ -1,0 +1,30 @@
+ [
+    {
+        "timestamp": "09E9070C1B4A",
+        "category": "ENGINEERING",
+        "author": "AUTOMATION",
+        "entry": "DIAGNOSTIC ALERT: Hydraulic pressure failure detected in Cargo Loader 3. Unit has been automatically locked down. Manual override required for maintenance. Operator: Kantaro5.",
+        "access": []
+    },
+    {
+        "timestamp": "09E9070D3F11",
+        "category": "MAINTENANCE",
+        "author": "Rie7",
+        "entry": "Work order submitted: Sanitation required in comms lounge. Organic contaminant (nutrient paste) on primary console. This is the third time this cycle. Recommending restricted food access in tech areas.",
+        "access": []
+    },
+    {
+        "timestamp": "09E9070E8A02",
+        "category": "SECURITY",
+        "author": "AUTOMATION",
+        "entry": "Motion detected in restricted maintenance crawlspace (Airlock Beta-4). Heat signature consistent with small, non-human biological. Cleared after 15 minutes. No system interference detected.",
+        "access": []
+    },
+    {
+        "timestamp": "09E9070F0C55",
+        "category": "OPERATIONS",
+        "author": "Sonya1",
+        "entry": "Quarterly resupply order for drill bits has been finalized and submitted. Included new carbide-tipped variants as per recommendations from D. Flores and A. Higani. ETA is three cycles.",
+        "access": ["Sonya1"]
+    }
+ ]

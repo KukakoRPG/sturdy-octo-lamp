@@ -1,0 +1,60 @@
+ {
+    "container-vm-1": {
+        "name": "Cargo Container (Vainglory Rods)",
+        "description": [
+            "ID: EP-VM-77A",
+            "CONTENTS: Vainglory Metal Rods",
+            "STATUS: Secured with double-shock dampeners.",
+            "TEMP: 5°C (Stable)",
+            "NOTES: Handle with care. Alloy is extremely brittle."
+        ]
+    },
+    "container-vm-2": {
+        "name": "Cargo Container (Vainglory Rods)",
+        "description": [
+            "ID: EP-VM-77B",
+            "CONTENTS: Vainglory Metal Rods",
+            "STATUS: Secured with double-shock dampeners.",
+            "TEMP: 5°C (Stable)",
+            "NOTES: Handle with care. Alloy is extremely brittle."
+        ]
+    },
+    "container-bn-1": {
+        "name": "Cargo Container (Barium Nitrate)",
+        "description": [
+            "ID: EP-BN-42C",
+            "CONTENTS: Barium Nitrate Crystals (50kg)",
+            "STATUS: Secured with double-shock dampeners.",
+            "TEMP: 4°C (Stable)",
+            "<span class='warning-text'>WARNING: Contents are highly flammable. Avoid static discharge. Use grounded handling gear.</span>"
+        ]
+    },
+    "ship-registration-panel": {
+        "name": "Ship Registration Panel",
+        "description": [
+            "VESSEL: Icarus (M-Class Freighter)",
+            "REG. #: GHY-34982-C",
+            "STATUS: <span class='warning-text'>EXPIRED - PAYMENT OVERDUE (₢8,500)</span>",
+            "AUTHORITY: Pan-Corporate Fleet Authority",
+            "NOTES: Trans-system flight license is invalid. Vessel subject to impoundment."
+        ]
+    },
+    "comms-panel": {
+        "name": "Primary Comms Panel",
+        "description": [
+            "STATUS: <span class='warning-text'>DEGRADED - Subspace transceiver requires replacement.</span>",
+            "LAST SERVICE: 09E1081A0F00",
+            "PERFORMANCE: Signal strength at 65%. Intermittent signal loss on long-range channels.",
+            "NOTES: Local network comms are unaffected."
+        ]
+    },
+    "shock-dampeners": {
+        "name": "Cargo Hold Shock Dampeners",
+        "description": [
+            "MODEL: 'Steady-Hand' Mk. IV",
+            "STATUS: All active dampeners engaged and calibrated.",
+            "INTEGRITY: 98%",
+            "NOTES: Optimal for transport of fragile materials. Required for Ember Peak contract."
+        ]
+    }
+ }

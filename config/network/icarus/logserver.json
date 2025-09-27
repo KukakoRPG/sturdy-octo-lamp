@@ -1,0 +1,23 @@
+ [
+    {
+        "timestamp": "09E90701A4F0",
+        "category": "ENGINEERING",
+        "author": "karp",
+        "entry": "Subspace transceiver is acting up again. Signal strength is degrading. Ran a diagnostic, looks like the primary amplification coil is failing. We don't have a spare. Going to have to rely on local comms until we can afford a replacement. This is going to make the Ember Peak run tricky.",
+        "access": []
+    },
+    {
+        "timestamp": "09E90703B1C8",
+        "category": "PERSONAL",
+        "author": "karp",
+        "entry": "Another payment reminder from Pan-Corporate. 8,500 credits... where are we supposed to pull that from? This Ember Peak job has to go smoothly. No room for error. The punctuality bonus is our only real shot at getting back in the black. Anya's asking for money again, too. Stress is high.",
+        "access": ["karp"]
+    },
+    {
+        "timestamp": "09E90705CC33",
+        "category": "SYSTEM",
+        "author": "AUTOMATION",
+        "entry": "Power fluctuation detected in cargo bay. Life support unaffected. Shock dampeners recalibrated automatically. Cause: transient power spike from aft power conduit. Monitoring.",
+        "access": []
+    }
+ ]

@@ -1,18 +1,18 @@
 [
     {
-        "userId": "karp",
+        "userId": "karp", // Player 1 of the TTRPG Mothership
         "password": "pass",
         "userName": "karp",
         "description": "Anatoli Karpow, Icarus Scientist"
     },
     {
-        "userId": "player2",
+        "userId": "player2", // Player 2 of the TTRPG Mothership
         "password": "pass",
         "userName": "player2",
         "description": ""
     },
     {
-        "userId": "player3",
+        "userId": "player3", // Player 3 of the TTRPG Mothership
         "password": "pass",
         "userName": "player3",
         "description": ""

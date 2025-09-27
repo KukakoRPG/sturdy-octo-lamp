@@ -109,5 +109,8 @@
             "█                          █             █             █",
             "████████████████████████████████████████████████████████"
         ]
+    },
+    "scan": {
+        "help": "Scans a designated object in the environment for more information. Usage: scan [object-id]"
     }
 }

@@ -4,6 +4,8 @@ let serverDatabase = {};
 let userDatabase = {};
 let userList = [];
 let mailList = [];
+let logList = [];
+let scannableList = {};
 let cmdLine_;
 let output_;
 let serverDate = { day: "", month: "", year: "", reference: "" };
@@ -232,6 +234,12 @@ kernel.connectToServer = function connectToServer( serverAddress, userName, pass
                 $.get( `config/network/${ serverInfo.serverAddress }/mailserver.json`, ( mails ) => {
                     mailList = mails;
                 } );
+                $.get( `config/network/${ serverInfo.serverAddress }/logserver.json`, ( logs ) => {
+                    logList = logs;
+                } ).fail( () => logList = [] ); // Reset if not found
+                $.get( `config/network/${ serverInfo.serverAddress }/scannables.json`, ( scannables ) => {
+                    scannableList = scannables;
+                } ).fail( () => scannableList = {} ); // Reset if not found
                 setHeader( "Connection successful" );
                 resolve();
             } else if ( userName ) {
@@ -251,6 +259,12 @@ kernel.connectToServer = function connectToServer( serverAddress, userName, pass
                     $.get( `config/network/${ serverInfo.serverAddress }/mailserver.json`, ( mails ) => {
                         mailList = mails;
                     } );
+                    $.get( `config/network/${ serverInfo.serverAddress }/logserver.json`, ( logs ) => {
+                        logList = logs;
+                    } ).fail( () => logList = [] ); // Reset if not found
+                    $.get( `config/network/${ serverInfo.serverAddress }/scannables.json`, ( scannables ) => {
+                        scannableList = scannables;
+                    } ).fail( () => scannableList = {} ); // Reset if not found
                     setHeader( "Connection successful" );
                     resolve();
                 } ).fail( () => {
@@ -265,6 +279,16 @@ kernel.connectToServer = function connectToServer( serverAddress, userName, pass
         } );
     } );
 };
+
+/**
+ * Helper function to get logs accessible by the current user.
+ * A log is accessible if it has no `access` field, an empty `access` array, or if the user's ID is in the `access` array.
+ */
+function getAccessibleLogs() {
+    return logList.filter( ( log ) => (
+        !log.access || log.access.length === 0 || log.access.includes( userDatabase.userId )
+    ) );
+}
 
 /**
  * This will initialize the kernel function.
@@ -392,6 +416,8 @@ system = {
                 resolve( [ "Usage:", "> login username:password", "Switch account: log in as another registered user on the server, to access your data files and messages." ] );
             } else if ( args[ 0 ] === "mail" ) {
                 resolve( [ "Usage:", "> mail", "If you're logged in you can list your mail messages if any. Use the read command to access a specific message." ] );
+            } else if ( args[ 0 ] === "logs" ) {
+                resolve( [ "Usage:", "> logs [--category=CAT]", "Lists ship or station logs. Can be filtered by category (e.g., ENGINEERING, CAPTAIN, SYSTEM)." ] );
             } else if ( args[ 0 ] === "ping" ) {
                 resolve( [
                     "Usage:",
@@ -401,6 +427,11 @@ system = {
                 ] );
             } else if ( args[ 0 ] === "read" ) {
                 resolve( [ "Usage:", "> read x", "If you're logged in you can read your mail messages if any. Provide the message index as x." ] );
+            } else if ( args[ 0 ] === "readlog" ) {
+                resolve( [ "Usage:", "> readlog x", "Reads a specific log entry by its index number from the 'logs' command." ] );
+            } else if ( args[ 0 ] === "ssh" ) {
+                resolve( [
+                    "Usage:", "> scan [object-id]", "Scans a designated object in the environment for more information." ] );
             } else if ( args[ 0 ] === "ssh" ) {
                 resolve( [
                     "Usage:",
@@ -542,6 +573,49 @@ system = {
                 return;
             }
             resolve( messageList );
+        } );
+    },
+
+    logs( args ) {
+        return new Promise( ( resolve, reject ) => {
+            const accessibleLogs = getAccessibleLogs();
+            if ( accessibleLogs.length === 0 ) {
+                reject( new Error( "No accessible logs found on this server." ) );
+                return;
+            }
+
+            let categoryFilter = "";
+            const categoryArg = args.find( ( arg ) => arg.startsWith( "--category=" ) );
+            if ( categoryArg ) {
+                categoryFilter = categoryArg.split( "=" )[ 1 ];
+            }
+
+            const filteredLogs = accessibleLogs.filter( ( log ) => !categoryFilter || log.category.toUpperCase() === categoryFilter.toUpperCase() );
+
+            if ( filteredLogs.length === 0 ) {
+                resolve( `No logs found for category: ${ categoryFilter }` );
+                return;
+            }
+
+            const logEntries = filteredLogs.map( ( log, i ) => `[${ i }] ${ log.timestamp } [${ log.category }] - ${ log.entry.substring( 0, 45 ) }...` );
+            resolve( logEntries );
+        } );
+    },
+
+    readlog( args ) {
+        return new Promise( ( resolve, reject ) => {
+            const accessibleLogs = getAccessibleLogs();
+            const logIndex = Number( args[ 0 ] );
+            const logAtIndex = accessibleLogs[ logIndex ];
+
+            if ( !logAtIndex ) {
+                reject( new Error( `Invalid or inaccessible log index: ${ logIndex }` ) );
+                return;
+            }
+
+            const message = [ "---------------------------------------------", `Timestamp: ${ logAtIndex.timestamp }`, `Category:  ${ logAtIndex.category }`, `Author:    ${ logAtIndex.author }`, "---------------------------------------------", logAtIndex.entry ];
+
+            resolve( message );
         } );
     },
 

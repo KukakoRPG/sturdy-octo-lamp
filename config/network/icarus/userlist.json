@@ -6,10 +6,10 @@
         "description": "Anatoli Karpow, Icarus Scientist"
     },
     {
-        "userId": "player2", // Player 2 of the TTRPG Mothership
+        "userId": "tan2", // Player 2 of the TTRPG Mothership
         "password": "pass",
-        "userName": "player2",
-        "description": ""
+        "userName": "tan2",
+        "description": "Tanya Two, Icarus Teamster"
     },
     {
         "userId": "player3", // Player 3 of the TTRPG Mothership

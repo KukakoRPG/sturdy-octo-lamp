@@ -430,8 +430,7 @@ system = {
             } else if ( args[ 0 ] === "readlog" ) {
                 resolve( [ "Usage:", "> readlog x", "Reads a specific log entry by its index number from the 'logs' command." ] );
             } else if ( args[ 0 ] === "ssh" ) {
-                resolve( [
-                    "Usage:", "> scan [object-id]", "Scans a designated object in the environment for more information." ] );
+                resolve( [ "Usage:", "> scan [object-id]", "Scans a designated object in the environment for more information." ] );
             } else if ( args[ 0 ] === "ssh" ) {
                 resolve( [
                     "Usage:",
@@ -459,7 +458,7 @@ system = {
 
     login( args ) {
         return new Promise( ( resolve, reject ) => {
-            if ( !args ) {
+            if ( !args || args.length === 0 ) {
                 reject( new UsernameIsEmptyError() );
                 return;
             }

@@ -5,6 +5,7 @@ This project is a browser-based terminal simulation, designed to enhance gamepla
 
 ### Mothership TTRPG Context
 In Mothership, players take on roles like Teamsters, Scientists, and Androids, exploring a dangerous universe filled with corporate greed, cosmic horrors, and derelict spacecraft. The game is known for its deadly encounters, stress and panic mechanics, and a low-poly, retro-futuristic aesthetic inspired by films like *Alien* and *Event Horizon*.
+The aesthetics of the setting is casette futurism, with chunky interfaces, monochrome displays, and utilitarian designs. The terminal simulation captures this vibe with a command-line interface, pixelated fonts, and glitchy visual effects.
 
 ### Mothership TTRPG uses standard d10s for all of its rolls, though it uses them in 3 different ways
 - xd10: Roll a certain number of d10s and add them together. 2d10 would give players a number between 2-20.

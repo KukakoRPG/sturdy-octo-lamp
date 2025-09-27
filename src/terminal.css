@@ -99,9 +99,10 @@ body {
   color: #ADD8E6; /* A light blue color */
 }
 
-.ascii-map, #container output pre {
+.ascii-map pre {
   font-family: 'DejaVu Sans Mono', monospace;
   line-height: 1.1;
+  white-space: pre;
 }
 
 /* Special FX */

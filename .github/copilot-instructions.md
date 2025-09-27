@@ -239,9 +239,34 @@ The core architecture is modular, with distinct responsibilities for terminal UI
 - **Output formatting**: Use HTML in output messages for warnings, notices, and effects.
 - **History management**: Initial command history per user/server is set in manifest files.
 
+
 ## External Dependencies
 - **jQuery**: Used for DOM manipulation.
 - **p5.js**: Used for image effects (glitch rendering).
+
+## Story State Management
+- **src/story.js**: Manages player progression, access, passwords, goals, and story points. Use `window.story` functions to grant/revoke access, set story points, and track goals for each player.
+- Automate story state setup for all players by calling `story.initPlayersFromUserlist(userlistArray)` with the parsed userlist from `config/network/icarus/userlist.json`.
+
+### Example Usage
+```js
+// Grant access to a section
+story.grantAccess("karp", "minesSection");
+
+// Set a story point
+story.setStoryPoint("player2", "foundKeycard", true);
+
+// Add a goal
+story.addGoal("player3", "Escape the mines");
+
+// Initialize all player states at startup
+// story.initPlayersFromUserlist(userlistArray);
+```
+
+### Integration Patterns
+- Use story state to unlock commands, change UI, or trigger events based on player progress.
+- Reference player user IDs from the Icarus userlist for all story-related logic.
+- NPCs (from other userlists) can have story state, but focus on players for progression.
 
 ## Examples
 - To add a diagnostic command:
@@ -266,6 +291,11 @@ The core architecture is modular, with distinct responsibilities for terminal UI
 - Use manifest files for server-specific configuration.
 - Prefer HTML output for rich terminal feedback.
 - Use custom error classes for all error states.
+
+## Recommendations
+- Document any new commands or story triggers in `config/software.json` and implement logic in `config/software.js`.
+- For persistent story state, consider adding save/load features.
+- Use story points and goals to drive narrative and puzzle progression.
 
 ---
 If any section is unclear or missing, please provide feedback for further refinement.

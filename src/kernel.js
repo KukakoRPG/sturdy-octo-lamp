@@ -808,7 +808,7 @@ function allowedSoftwares() {
         if ( program === null ) {
             softwares[ app ] = null;
         } else if (
-            ( !program.location || program.location.includes( serverDatabase.serverAddress ) ) &&
+            ( !program.location || program.location.includes( "*" ) || program.location.includes( serverDatabase.serverAddress ) ) &&
             ( !program.protection || program.protection.length === 0 || program.protection.includes( userDatabase.userId ) )
         ) {
             softwares[ app ] = program;

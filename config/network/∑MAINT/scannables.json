@@ -18,16 +18,6 @@
             "Notes: Ready for docking operations."
         ]
     },
-    "prince": {
-        "name": "Unauthorized Biological",
-        "description": [
-            "SCANNING... <span class='comment'>Felis catus</span>",
-            "VITALS: Stable",
-            "STATUS: Annoyed, but otherwise healthy.",
-            "OWNER: Morgan6",
-            "Notes: Subject appears to be hiding under a console in the comms lounge."
-        ]
-    },
     "nutrient-paste-tube": {
         "name": "Discarded Nutrient Paste Tube",
         "description": [

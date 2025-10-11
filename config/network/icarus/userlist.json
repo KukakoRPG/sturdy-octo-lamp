@@ -6,16 +6,16 @@
         "description": "Anatoli Karpow, Icarus Scientist"
     },
     {
-        "userId": "tan2",
+        "userId": "kate",
         "password": "pass",
-        "userName": "tan2",
-        "description": "Tanya Two, Icarus Teamster"
+        "userName": "kate",
+        "description": "Katelynn Matheney, Icarus Teamster"
     },
     {
-        "userId": "player3",
+        "userId": "delo",
         "password": "pass",
-        "userName": "player3",
-        "description": ""
+        "userName": "delo",
+        "description": "Delora Bodkin, Icarus Teamster"
     },
     {
         "userId": "guest0",

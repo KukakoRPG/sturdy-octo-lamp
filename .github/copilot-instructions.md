@@ -1,74 +1,18 @@
 # Copilot Instructions for AI Coding Agents
 
-## Main entry point for the application
-
-index.html
-
-## All core application source code
-
-src/**/*.js
-
-## Main stylesheet
-
-src/terminal.css
-
-## All configuration files
-
-config/**/*.js
-config/**/*.json
-
-## Examples
-
-- To add a diagnostic command:
-  - Add to `software.json`:
-
-    ```json
-    "diagnose": {
-      "location": ["∑MAINT"],
-      "protection": ["Sonya1"],
-      "message": ["..."],
-      "help": "Runs system diagnostics."
-    }
-    ```
-
-  - Implement in `software.js`:
-
-    ```javascript
-    function diagnose() {
-      // ...logic...
-    }
-    ```
-
-## Conventions
-
-- Keep all custom command logic in `config/software.js`.
-- Use manifest files for server-specific configuration.
-- Prefer HTML output for rich terminal feedback.
-- Use custom error classes for all error states.
-
-## Recommendations
-
-- Document any new commands or story triggers in `config/software.json` and implement logic in `config/software.js`.
-- For persistent story state, consider adding save/load features.
-- Use story points and goals to drive narrative and puzzle progression.
-
 ## Project Overview
-
 This project is a browser-based terminal simulation, designed to enhance gameplay for the sci-fi horror tabletop role-playing game (TTRPG) **Mothership®**.
 
 ### Mothership TTRPG Context
-
 In Mothership, players take on roles like Teamsters, Scientists, and Androids, exploring a dangerous universe filled with corporate greed, cosmic horrors, and derelict spacecraft. The game is known for its deadly encounters, stress and panic mechanics, and a low-poly, retro-futuristic aesthetic inspired by films like *Alien* and *Event Horizon*.
 The aesthetics of the setting is casette futurism, with chunky interfaces, monochrome displays, and utilitarian designs. The terminal simulation captures this vibe with a command-line interface, pixelated fonts, and glitchy visual effects.
 
 ### Mothership TTRPG uses standard d10s for all of its rolls, though it uses them in 3 different ways
-
 - xd10: Roll a certain number of d10s and add them together. 2d10 would give players a number between 2-20.
 - xd10: Note the underline. This means to roll a certain number of d10s and add them together and multiply the result by ten. 2d10 would give players a number between 20-200. If players have a set of d10s with just the tens digits on them, they’re perfect for rolls like this.
 - d%: Roll 1d10 and 1d10 and add them together (reading the result as a percentile). This gives players a number between 0-99. You’ll need two sets of d% dice that you players tell apart easily.
 
-### Mothership TTRPG uses four different character stats, and players check them trying to roll d% under the appropriate stat
-
+### Mothership TTRP uses four different character stats, and players check them trying to roll d% under the appropriate stat
 - Strength: How able-bodied PCs are. Lifting, pushing, hitting things hard.
 - Speed: How quickly PCs can act and react under pressure.
 - Intellect: How knowledgeable and experienced PCs are.
@@ -77,9 +21,7 @@ The aesthetics of the setting is casette futurism, with chunky interfaces, monoc
 Whenever players make a Stat check and players have a situational Advantage, players roll d% twice and use the best result.
 
 ### Mothership TTRPG uses following skills
-
 Trained skills
-
 - Archealogy: Ancient cultures and their artifacts.
 - Art: The expression of application of a species' creative ability and imagination.
 - Athletics: Physical sports and games.
@@ -102,7 +44,6 @@ Trained skills
 - Zero-G: Working in a vacuum, vacsuits, etc.
 
 Expert skills
-
 - Asteroid Mining: Training in the tools and procedures used in mining asteroids.
 - Astrogation: Nagivation in outer space.
 - Botany: The study of plant life.
@@ -123,7 +64,6 @@ Expert skills
 - Vehicle Specialization: Operation and control of a specific type of vehicle.
 
 Master Skills
-
 - Artificial Intelligence: Knowledge of simulacrum of human consciousness.
 - Command: Leadership and authority over others.
 - Cybernetics: Interface between humans and machines.
@@ -135,16 +75,14 @@ Master Skills
 - Xenoesotericism: Obscure alien mysticism, religion and beliefs.
 
 ### Mothership TTRPG has four different saves
+ - Sanity: Ability to explain away logical inconsistencies in the universe, rationalize and make sense out of chaos, detect illusions and mimicry, and think quickly under pressure.
+ - Fear: How well a character can cope with emotional trauma, and covers not only fear but also loneliness, depression, or any other emotional surge.
+ - Body: Reflexes, and how well characters can resist hunger, disease, or any other organism that might attempt to invade their body.
+ - Armor: How resistant a characters are to damage sustained during combat, whether that be through bullets, claws, teeth, etc.
 
-- Sanity: Ability to explain away logical inconsistencies in the universe, rationalize and make sense out of chaos, detect illusions and mimicry, and think quickly under pressure.
-- Fear: How well a character can cope with emotional trauma, and covers not only fear but also loneliness, depression, or any other emotional surge.
-- Body: Reflexes, and how well characters can resist hunger, disease, or any other organism that might attempt to invade their body.
-- Armor: How resistant a characters are to damage sustained during combat, whether that be through bullets, claws, teeth, etc.
 
 ### Example item prices in Mothership TTRPG
-
 |-------------------------------|----------|
-
 | Item                          | Cost (₡) |
 |-------------------------------|----------|
 | Advanced Battle Dress         | 1500     |
@@ -186,7 +124,6 @@ Master Skills
 |-------------------------------|----------|
 
 ### Space Travel Time Costs in Mothership TTRPG
-
 There are two possible ways for a ship to travel:
 via jump drive or via thrusters. Jump drives are
 powerful engines designed to allow a ship to
@@ -249,7 +186,6 @@ Refined fuel costs vary by system, but start at
 10,000 credits per unit.
 
 ### Spaceship Upgrades and Repairs in Mothership TTRPG
-
 At a well-equipped star port, upgrades to a ship take
 1 week per 10 hull added (or changed). Repairs
 take 1 day per 10 hull repaired. Poorly equipped or
@@ -267,10 +203,9 @@ patrons looking to hire mercenaries for dangerous
 jobs at these ports and you can often find work with
 them in hopes of paying off your ship’s repairs.
 
+
 ### Role of the Terminal
-
 This terminal serves as an interactive tool for the Game Master (known as the "Warden" in Mothership) to immerse players in the game world. Players can interact with the terminal to:
-
 - Access in-game information (emails, logs, system diagnostics).
 - Solve puzzles by finding clues hidden in the terminal.
 - Control ship systems (e.g., call an elevator, check life support).
@@ -279,7 +214,6 @@ This terminal serves as an interactive tool for the Game Master (known as the "W
 The core architecture is modular, with distinct responsibilities for terminal UI, command processing, error handling, and custom software logic, allowing Wardens to easily customize the experience for their specific campaigns.
 
 ## Key Components
-
 - **index.html**: Entry point. Loads all scripts and styles. Terminal UI is rendered here.
 - **src/terminal.js**: Implements terminal behavior, command history, input handling, and tab completion. Defines the `Terminal` class and related event listeners.
 - **src/kernel.js**: Manages global state, user/session data, server info, and header rendering. Handles date logic and prompt formatting.
@@ -291,84 +225,7 @@ The core architecture is modular, with distinct responsibilities for terminal UI
 - **config/software.js**: Implementations for custom commands listed in `software.json`. Function names must match program names.
 - **config/network/**: Contains server manifests, user lists, and mail data for each server (e.g., `∑MAINT`, `icarus`).
 
-## Commands
-
-The terminal supports a variety of commands, both built-in system commands and custom commands defined in the project's configuration files.
-
-### System Commands
-
-These commands are available on all servers and provide basic terminal functionality.
-
-| Command     | Description                                                            |
-|-------------|------------------------------------------------------------------------|
-| `clear`     | Clears the terminal screen.                                            |
-| `date`      | Displays the current server date and time in Hexa-Temporal Code (HTC). |
-| `echo`      | Prints the given text to the terminal.                                 |
-| `exit`      | Logs out the current user and returns to the dashboard.                |
-| `help`      | Displays a list of available commands.                                 |
-| `history`   | Displays a list of previously executed commands.                       |
-| `htcdecode` | Converts a full HTC timestamp back to a standard date and time.        |
-| `htcencode` | Converts a standard date and time to a full HTC timestamp.             |
-| `login`     | Logs in as a different user on the current server.                     |
-| `logs`      | Lists ship or station logs.                                            |
-| `mail`      | Lists your mail messages.                                              |
-| `ping`      | Pings a server to check if it's reachable.                             |
-| `read`      | Reads a specific mail message.                                         |
-| `readlog`   | Reads a specific log entry.                                            |
-| `ssh`       | Connects to a remote server.                                           |
-| `whoami`    | Displays your current user and server.                                 |
-|-------------|------------------------------------------------------------------------|
-
-### Custom Commands
-
-These commands are defined in `config/software.json` and implemented in `config/software.js`. They provide game-specific functionality and are often tied to the narrative of the TTRPG campaign.
-
-| Command    | Description                                                        |
-|------------|--------------------------------------------------------------------|
-| `notice`   | Shows docking bay activity for the last 6 months.                  |
-| `diagnose` | Runs system diagnostics and shows warnings.                        |
-| `callelv`  | Calls the main elevator to your floor.                             |
-| `idlist`   | Returns a list of registered user ids for this terminal.           |
-| `map`      | Employee map for induction purposes.                               |
-| `scan`     | Scans a designated object in the environment for more information. |
-|------------|--------------------------------------------------------------------|
-
-## Network Simulation
-
-The terminal simulates a network of servers, each with its own set of users, files, and mail. This allows for the creation of a rich and interactive game world. The network data is stored in the `config/network/` directory.
-
-### Server Configuration
-
-Each server has its own directory within `config/network/`. For example, the `icarus` server is configured in `config/network/icarus/`. Each server directory contains the following files:
-
-- **`manifest.json`**: Contains the server's metadata, such as its name, address, and default user.
-- **`userlist.json`**: A list of users who have accounts on the server, along with their passwords and other information.
-- **`mailserver.json`**: A list of mail messages on the server.
-- **`logserver.json`**: A list of log entries on the server.
-- **`scannables.json`**: A list of objects that can be scanned with the `scan` command.
-
-## Custom Errors
-
-The application uses a set of custom error classes to handle various error conditions. These errors are defined in `src/error.js`.
-
-| Error | Description |
-|---|---|
-| `CommandNotFoundError` | Thrown when a command is not found. |
-| `InvalidCommandParameter` | Thrown when a command is given invalid parameters. |
-| `AddressNotFoundError` | Thrown when a server address cannot be reached. |
-| `AddressIsEmptyError` | Thrown when an address is required but not provided. |
-| `UsernameIsEmptyError` | Thrown when a username is required but not provided. |
-| `InvalidCredsSyntaxError` | Thrown when credentials are provided in an invalid format. |
-| `InvalidPasswordError` | Thrown when an invalid password is provided for a user. |
-| `MailServerIsEmptyError` | Thrown when there are no new mail messages. |
-| `InvalidMessageKeyError` | Thrown when an invalid message key is provided. |
-| `AlreadyOnServerError` | Thrown when attempting to connect to the server you are already on. |
-| `UnknownUserError` | Thrown when a user is not found on the server. |
-| `ServerRequireUsernameError` | Thrown when a server requires a username to be accessed. |
-| `JsonFetchParseError` | Thrown when there is an error fetching or parsing a JSON file. |
-
 ## Developer Workflows
-
 - **Add a new command/program**:
   1. Define its metadata in `config/software.json`.
   2. Implement its logic in `config/software.js` (function name must match).
@@ -378,25 +235,22 @@ The application uses a set of custom error classes to handle various error condi
 - **User/session management**: Server/user state is loaded from manifest and userlist files in `config/network/*`.
 
 ## Project-Specific Patterns
-
 - **Hexadecimal date/time formatting**: See `setHeader` in `src/kernel.js` for how server date/time is displayed in hex.
 - **Command protection**: Restrict commands to specific users via the `protection` array in `software.json`.
 - **Output formatting**: Use HTML in output messages for warnings, notices, and effects.
 - **History management**: Initial command history per user/server is set in manifest files.
 
-## External Dependencies
 
+## External Dependencies
 - **jQuery**: Used for DOM manipulation.
 - **p5.js**: Used for image effects (glitch rendering).
 
 ## Story State Management
-
 - **src/story.js**: Manages player progression, access, passwords, goals, and story points. Use `window.story` functions to grant/revoke access, set story points, and track goals for each player.
 - Automate story state setup for all players by calling `story.initPlayersFromUserlist(userlistArray)` with the parsed userlist from `config/network/icarus/userlist.json`.
 
 ### Example Usage
-
-```javascript
+```js
 // Grant access to a section
 story.grantAccess("karp", "minesSection");
 
@@ -411,10 +265,38 @@ story.addGoal("player3", "Escape the mines");
 ```
 
 ### Integration Patterns
-
 - Use story state to unlock commands, change UI, or trigger events based on player progress.
 - Reference player user IDs from the Icarus userlist for all story-related logic.
 - NPCs (from other userlists) can have story state, but focus on players for progression.
+
+## Examples
+- To add a diagnostic command:
+  - Add to `software.json`:
+    ```json
+    "diagnose": {
+      "location": ["∑MAINT"],
+      "protection": ["Sonya1"],
+      "message": ["..."],
+      "help": "Runs system diagnostics."
+    }
+    ```
+  - Implement in `software.js`:
+    ```js
+    function diagnose() {
+      // ...logic...
+    }
+    ```
+
+## Conventions
+- Keep all custom command logic in `config/software.js`.
+- Use manifest files for server-specific configuration.
+- Prefer HTML output for rich terminal feedback.
+- Use custom error classes for all error states.
+
+## Recommendations
+- Document any new commands or story triggers in `config/software.json` and implement logic in `config/software.js`.
+- For persistent story state, consider adding save/load features.
+- Use story points and goals to drive narrative and puzzle progression.
 
 ---
 If any section is unclear or missing, please provide feedback for further refinement.

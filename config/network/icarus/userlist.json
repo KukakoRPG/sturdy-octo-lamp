@@ -8,7 +8,7 @@
     {
         "userId": "tan2",
         "password": "pass",
-        "userName": "tan",
+        "userName": "tan2",
         "description": "Tanya Two, Icarus Teamster"
     },
     {
@@ -21,18 +21,6 @@
         "userId": "guest0",
         "password": "guest",
         "userName": "Guest",
-        "description": "Guest Account"
-    },
-    {
-        "userId": "romulus",
-        "password": "lupus",
-        "userName": "unit-rm",
-        "description": "Unit-RM, Ship Maintenance Android, Prefers solitude."
-    },
-    {
-        "userId": "remus",
-        "password": "capitoline",
-        "userName": "unit-rs",
-        "description": "Unit-RS, Ship Maintenance Android, Reports to Unit-RM."
+        "description": ""
     }
 ]

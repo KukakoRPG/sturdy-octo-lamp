@@ -23,12 +23,5 @@
         "player3": [
             "help"
         ]
-    },
-    "lifeSupport": {
-        "o2_levels": "WARNING: LOW",
-        "o2_percentage": 15,
-        "co2_scrubber": "OFFLINE",
-        "power": "BACKUP GRID",
-        "power_percentage": 30
     }
 }

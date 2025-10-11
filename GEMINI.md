@@ -1,4 +1,4 @@
-# Copilot Instructions for AI Coding Agents
+# GEMINI.md - Context for the sturdy-octo-lamp project
 
 ## Main entry point for the application
 

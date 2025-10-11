@@ -303,19 +303,20 @@ kernel.init = function init( cmdLineContainer, outputContainer ) {
         cmdLine_ = document.querySelector( cmdLineContainer );
         output_ = document.querySelector( outputContainer );
 
-        $.when(
-            $.get( "config/software.json", ( softwareData ) => {
-                softwareInfo = softwareData;
-                kernel.connectToServer( defaultServerAddress );
-            } )
-        )
-            .done( () => {
-                resolve( true );
-            } )
-            .fail( ( err, msg, details ) => {
-                console.error( "[init] Failure:", err, msg, details );
-                reject( new JsonFetchParseError( msg ) );
-            } );
+        $.get( "config/software.json", ( softwareData ) => {
+            softwareInfo = softwareData;
+            kernel.connectToServer( defaultServerAddress )
+                .then( () => {
+                    resolve( true );
+                } )
+                .catch( ( err ) => {
+                    console.error( "[init] Failure during connectToServer:", err );
+                    reject( err );
+                } );
+        } ).fail( ( err, msg, details ) => {
+            console.error( "[init] Failure loading software.json:", err, msg, details );
+            reject( new JsonFetchParseError( msg ) );
+        } );
     } );
 };
 

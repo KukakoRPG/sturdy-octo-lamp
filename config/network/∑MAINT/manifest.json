@@ -52,5 +52,12 @@
         "guest0": [
             "help"
         ]
+    },
+    "lifeSupport": {
+        "o2_levels": "STABLE",
+        "o2_percentage": 98,
+        "co2_scrubber": "ONLINE",
+        "power": "MAIN GRID",
+        "power_percentage": 100
     }
 }

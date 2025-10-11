@@ -339,3 +339,21 @@ body {
       0px -10px 100px #7b96b8, 0px -10px 100px #7b96b8;
   }
 }
+
+.status-good {
+    background: linear-gradient(to right, #0f0, #0a0);
+    color: #000;
+    padding: 0 5px;
+}
+
+.status-warning {
+    background: linear-gradient(to right, #ff0, #fa0);
+    color: #000;
+    padding: 0 5px;
+}
+
+.status-danger {
+    background: linear-gradient(to right, #f00, #a00);
+    color: #fff;
+    padding: 0 5px;
+}

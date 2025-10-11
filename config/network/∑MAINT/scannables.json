@@ -1,4 +1,4 @@
- {
+{
     "loader-3": {
         "name": "Cargo Loader 3",
         "description": [
@@ -6,26 +6,6 @@
             "Last Operator: Kantaro5",
             "Error Code: 7-HYD-PRESSURE-FAIL",
             "Notes: Hydraulic arm pressure readings are unstable. Unit is locked down pending maintenance. Do not attempt to operate."
-        ]
-    },
-    "airlock-beta-4": {
-        "name": "Docking Bay Airlock (Beta-4)",
-        "description": [
-            "STATUS: CYCLED - PRESSURIZED",
-            "Outer Door: SEALED",
-            "Inner Door: SEALED",
-            "Atmosphere: 100% (SAFE)",
-            "Notes: Ready for docking operations."
-        ]
-    },
-    "prince": {
-        "name": "Unauthorized Biological",
-        "description": [
-            "SCANNING... <span class='comment'>Felis catus</span>",
-            "VITALS: Stable",
-            "STATUS: Annoyed, but otherwise healthy.",
-            "OWNER: Morgan6",
-            "Notes: Subject appears to be hiding under a console in the comms lounge."
         ]
     },
     "nutrient-paste-tube": {
@@ -36,6 +16,28 @@
             "STATUS: Half-eaten, discarded.",
             "TRACE: DNA residue matches employee Morgan6.",
             "HAZARD: Minor slip hazard. Potential morale decrease for sanitation crew."
+        ]
+    },
+    "airlock-beta-4": {
+        "name": "Docking Bay Airlock (Beta-4)",
+        "description": [
+            "STATUS: DOCKED - PRESSURIZED",
+            "Outer Door: SEALED",
+            "Inner Door: OPEN",
+            "Atmosphere: 100% (SAFE)",
+            "Docked Ship: ICARUS",
+            "Notes: Ready for docking operations."
+        ]
+    },
+    "airlock-alpha-4": {
+        "name": "Docking Bay Airlock (Alpha-4)",
+        "description": [
+            "STATUS: LOCKED - DOCKED",
+            "Outer Door: SEALED",
+            "Inner Door: SEALED",
+            "Atmosphere: 100% (SAFE)",
+            "Docked Ship: HERCULES",
+            "Notes: Access to this airlock is restricted."
         ]
     }
  }

@@ -1,7 +1,7 @@
 [
     {
         "from": "auto-mailer@emberpeak.jobbulletin.00d",
-        "to": ["karp","player2","player3"],
+        "to": ["karp","tan2","player3"],
         "title": "Ember Peak Mining & Logistics – DF-3911 Cargo Retrieval",
         "body": [
             "Hello Crew,",
@@ -43,7 +43,7 @@
     },
     {
         "from": "auto.mailer@infometrics.stellarcafe.a0d",
-        "to": ["karp","player2","player3"],
+        "to": ["karp","tan2","player3"],
         "title": "Offer you can't refuse!",
         "body": [
             "Recharge in most stations of the known space!",
@@ -55,7 +55,7 @@
     },
     {
         "from": "noreply@horizons.data.00d",
-        "to": ["karp","player2","player3"],
+        "to": ["karp","tan2","player3"],
         "title": "‼️ YOUR SHIP'S REGISTRATION IS EXPIRING ‼️",
         "body": [
             "Pan-Corporate Fleet Authority",

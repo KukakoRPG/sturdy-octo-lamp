@@ -112,5 +112,17 @@
     },
     "scan": {
         "help": "Scans a designated object in the environment for more information. Usage: scan [object-id]"
+    },
+    "roll": {
+      "location": ["*"],
+      "protection": [],
+      "message": [],
+      "help": "Rolls dice. Usage: roll [Xd10|d%]"
+    },
+    "lifesupport": {
+      "location": ["∑MAINT", "icarus"],
+      "protection": [],
+      "message": [],
+      "help": "Displays the status of the life support system."
     }
 }

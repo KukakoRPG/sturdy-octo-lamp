@@ -22,14 +22,14 @@ function scan( args ) {
 
     if ( matches.length === 0 ) {
         return [
-            `Scanning for "${ query }"...`,
+            `Scanning for \"${ query }\"...`,
             "ERROR: No object found with that ID in local range."
         ];
     }
 
     if ( matches.length > 1 ) {
         const ambiguousOutput = [
-            `Multiple objects found matching "${ query }". Please be more specific:`,
+            `Multiple objects found matching \"${ query }\". Please be more specific:`,
             ...matches.map( ( id ) => `- ${ scannableList[ id ].name } (${ id })` )
         ];
         return ambiguousOutput;
@@ -49,8 +49,67 @@ function scan( args ) {
         ];
     } else {
         // This case should ideally not be reached if matches are found
-        return `ERROR: Found match "${ targetId }" but could not retrieve details.`;
+        return `ERROR: Found match \"${ targetId }\" but could not retrieve details.`;
     }
 
     return { text: output, delayed: 250 };
+}
+
+function roll(args) {
+    if (args.length === 0) {
+        return "Usage: roll [Xd10|d%]";
+    }
+
+    const input = args[0].toLowerCase();
+
+    if (input === 'd%') {
+        const roll = Math.floor(Math.random() * 100);
+        return `Rolling d%... Result: ${roll}`;
+    }
+
+    const match = input.match(/^(\d+)d10$/);
+    if (match) {
+        const numDice = parseInt(match[1], 10);
+        if (numDice > 0 && numDice <= 100) { // Let's cap it at 100 dice
+            let total = 0;
+            for (let i = 0; i < numDice; i++) {
+                total += Math.floor(Math.random() * 10) + 1;
+            }
+            return `Rolling ${numDice}d10... Result: ${total}`;
+        }
+    }
+
+    return `Invalid roll format. Use Xd10 (e.g., 2d10) or d%.`;
+}
+
+function getStatusColor(percentage) {
+    if (percentage > 75) {
+        return 'status-good';
+    }
+    if (percentage > 30) {
+        return 'status-warning';
+    }
+    return 'status-danger';
+}
+
+function lifesupport() {
+    const lifeSupportData = serverDatabase.lifeSupport;
+
+    if (!lifeSupportData) {
+        return "ERROR: Life support data not available for this server.";
+    }
+
+    const o2Color = getStatusColor(lifeSupportData.o2_percentage);
+    const powerColor = getStatusColor(lifeSupportData.power_percentage);
+    const co2Status = lifeSupportData.co2_scrubber.includes("OFFLINE") ? "status-danger" : "status-good";
+    const co2Text = lifeSupportData.co2_scrubber;
+
+
+    const output = `
+        <div class="notice">Life Support Systems</div>
+        <div>O2 Levels: <span class="${o2Color}">${lifeSupportData.o2_percentage}%</span> (${lifeSupportData.o2_levels})</div>
+        <div>CO2 Scrubber: <span class="${co2Status}">${co2Text}</span></div>
+        <div>Power: <span class="${powerColor}">${lifeSupportData.power_percentage}%</span> (${lifeSupportData.power})</div>
+    `;
+    return output;
 }

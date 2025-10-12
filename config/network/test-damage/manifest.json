@@ -2,7 +2,7 @@
   "serverAddress": "test-damage",
   "serverName": "Test Damage Terminal",
   "terminalID": "TEST-DMG-01",
-  "iconName": "icon.png",
+  "iconName": "emberpeak.png",
   "iconSize": 100,
   "iconClass": "",
   "headerExtraHTML": "<span class='warning-text'>WARNING: SCREEN DAMAGE DETECTED</span>",

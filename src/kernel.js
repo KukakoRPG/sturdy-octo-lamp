@@ -755,27 +755,24 @@ function software( progName, program, args ) {
 function runSoftware( progName, program, args ) {
     return new Promise( ( resolve ) => {
         let msg;
-        // Always call the function for mute, even if a message property is present
-        if (progName === "mute" && typeof window[progName] === "function") {
+        // Always call the function for any custom command if it exists
+        if (typeof window[progName] === "function") {
             msg = window[progName](args) || "";
         } else if ( program.message ) {
             msg = { text: program.message, delayed: program.delayed };
         } else {
-            msg = window[ progName ]( args ) || "";
-            if ( msg.constructor === Object ) {
-                if ( !msg.onInput ) {
-                    throw new Error( "An onInput callback must be defined!" );
-                }
-                if ( msg.message ) {
-                    output( msg.message );
-                }
-                readPrompt( msg.prompt || ">" ).then( ( input ) => msg.onInput( input ) )
-                    .then( ( finalMsg ) => resolve( finalMsg ) );
-                return;
-            }
+            msg = "";
         }
-        resolve( msg );
-    } );
+        if (msg && msg.constructor === Object && msg.onInput) {
+            if (msg.message) {
+                output(msg.message);
+            }
+            readPrompt(msg.prompt || ">" ).then( ( input ) => msg.onInput( input ) )
+                .then( ( finalMsg ) => resolve( finalMsg ) );
+            return;
+        }
+        resolve(msg);
+    });
 }
 
 /**

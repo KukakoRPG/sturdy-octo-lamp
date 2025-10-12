@@ -12,10 +12,21 @@ let histpos_ = 0;
 
 function Terminal() {
 
+    // === Sound volume controls ===
+    // Adjust these values (0.0 - 1.0) to fine-tune sound levels
+    const AMBIENT_VOLUME = 1.0;
+    const KEY_VOLUME = 0.7;
+    const OUTPUT_VOLUME = 0.7;
+
     // Sound elements
     const ambientAudio = document.getElementById("ambient-audio");
     const keyAudio = document.getElementById("key-audio");
     const outputAmbientAudio = document.getElementById("output-ambient-audio");
+
+    // Set initial volumes
+    if (ambientAudio) ambientAudio.volume = AMBIENT_VOLUME;
+    if (keyAudio) keyAudio.volume = KEY_VOLUME;
+    if (outputAmbientAudio) outputAmbientAudio.volume = OUTPUT_VOLUME;
 
     // Global mute state
     window.terminalMuteState = false;
@@ -24,7 +35,6 @@ function Terminal() {
     // Play ambient sound on user interaction (required by browsers)
     function startAmbient() {
         if (!window.terminalMuteState && ambientAudio.paused) {
-            ambientAudio.volume = 0.3;
             ambientAudio.play().catch(()=>{});
         }
     }

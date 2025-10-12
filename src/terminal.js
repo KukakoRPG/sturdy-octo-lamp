@@ -28,8 +28,17 @@ function Terminal() {
     if (keyAudio) keyAudio.volume = KEY_VOLUME;
     if (outputAmbientAudio) outputAmbientAudio.volume = OUTPUT_VOLUME;
 
+
     // Global mute state
-    window.terminalMuteState = false;
+    if (typeof window.terminalMuteState === 'undefined') window.terminalMuteState = false;
+
+    // Keep audio elements' .muted property in sync with mute state
+    function syncMuteState() {
+        if (ambientAudio) ambientAudio.muted = window.terminalMuteState;
+        if (keyAudio) keyAudio.muted = window.terminalMuteState;
+        if (outputAmbientAudio) outputAmbientAudio.muted = window.terminalMuteState;
+    }
+    setInterval(syncMuteState, 200);
 
 
     // Play ambient sound on user interaction (required by browsers)

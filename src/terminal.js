@@ -11,7 +11,6 @@ let history_ = [];
 let histpos_ = 0;
 
 function Terminal() {
-<<<<<<< HEAD
 
     // === Sound volume controls ===
     // Adjust these values (0.0 - 1.0) to fine-tune sound levels
@@ -50,13 +49,10 @@ function Terminal() {
     }
     document.body.addEventListener("click", startAmbient, { once: true });
 
-=======
->>>>>>> parent of 12dbda3 (Sounds)
     loadHistoryFromLocalStorage();
     addCmdLineListeners();
 
     function addCmdLineListeners() {
-<<<<<<< HEAD
             cmdLine_.addEventListener( "keydown", historyHandler_ );
             cmdLine_.addEventListener( "keydown", processNewCommand_ );
             cmdLine_.addEventListener( "keydown", tabSuggestionHandler_ );
@@ -68,11 +64,6 @@ function Terminal() {
                     keyAudio.play().catch(()=>{});
                 }
             });
-=======
-        cmdLine_.addEventListener( "keydown", historyHandler_ );
-        cmdLine_.addEventListener( "keydown", processNewCommand_ );
-        cmdLine_.addEventListener( "keydown", tabSuggestionHandler_ );
->>>>>>> parent of 12dbda3 (Sounds)
     }
 
     function removeCmdLineListeners() {
@@ -156,14 +147,11 @@ function Terminal() {
      */
     function processNewCommand_( e ) {
         if ( e.keyCode === 13 && this.value && this.value.trim() ) {
-<<<<<<< HEAD
             // Play output ambient loop on command submit
             if (!window.terminalMuteState) {
                 outputAmbientAudio.currentTime = 0;
                 outputAmbientAudio.play().catch(()=>{});
             }
-=======
->>>>>>> parent of 12dbda3 (Sounds)
             // Save shell history but avoids duplicates:
             if ( history_.length === 0 || history_[ history_.length - 1 ].trim() !== this.value.trim() ) {
                 history_[ history_.length ] = this.value;

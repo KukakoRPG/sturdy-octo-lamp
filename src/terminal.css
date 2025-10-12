@@ -9,7 +9,7 @@
   mix-blend-mode: lighten;
 }
 @font-face {
-  font-family: 'DejaVu Sans Mono';
+  font-family: 'Noto Sans Mono';
   src: url('../src/fonts/NotoSansMono-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;

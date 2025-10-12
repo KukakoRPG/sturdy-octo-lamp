@@ -76,52 +76,30 @@ function setHeader( msg ) {
     <p>Enter "help" for more information.</p>
     <div style="clear: both;"></div>
     `;
-<<<<<<< HEAD
 
         const overlayId = 'damage-overlay';
+        const body = document.body;
+
         if (serverDatabase.serverAddress === 'test-damage') {
             if (!document.getElementById(overlayId)) {
                 const overlay = document.createElement('div');
                 overlay.id = overlayId;
                 overlay.className = 'screen-damage';
-                document.body.appendChild(overlay);
+                body.appendChild(overlay);
             } else {
                 const overlay = document.getElementById(overlayId);
                 if (overlay !== document.body.lastElementChild) {
-                    document.body.appendChild(overlay);
+                    body.appendChild(overlay);
                 }
-=======
-    // Screen damage overlay logic
-    const overlayId = 'damage-overlay';
-    const body = document.body;
-
-    if (serverDatabase.serverAddress === 'test-damage') {
-        if (!document.getElementById(overlayId)) {
-            const overlay = document.createElement('div');
-            overlay.id = overlayId;
-            overlay.className = 'screen-damage';
-            body.appendChild(overlay);
-        } else {
-            const overlay = document.getElementById(overlayId);
-            if (overlay !== document.body.lastElementChild) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-                body.appendChild(overlay);
->>>>>>> parent of 98cdc6f (Update kernel.js)
-=======
-                document.body.appendChild(overlay);
->>>>>>> parent of b7cea82 (Scanlines test)
-=======
-                body.appendChild(overlay);
->>>>>>> parent of 98cdc6f (Update kernel.js)
             }
+            body.classList.add('scanlines', 'flicker');
         } else {
             const overlay = document.getElementById(overlayId);
-            if (overlay) overlay.remove();
+            if (overlay) {
+                overlay.remove();
+            }
+            body.classList.remove('scanlines', 'flicker');
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         output_.innerHTML = "";
         cmdLine_.value = "";
@@ -133,29 +111,6 @@ function setHeader( msg ) {
 
         document.body.classList.add('loaded');
     });
-=======
-        body.classList.add('scanlines', 'flicker');
-=======
->>>>>>> parent of b7cea82 (Scanlines test)
-=======
-        body.classList.add('scanlines', 'flicker');
->>>>>>> parent of 98cdc6f (Update kernel.js)
-    } else {
-        const overlay = document.getElementById(overlayId);
-        if (overlay) {
-            overlay.remove();
-        }
-        body.classList.remove('scanlines', 'flicker');
-    }
-    // Clear content:
-    output_.innerHTML = "";
-    cmdLine_.value = "";
-    if ( term ) {
-        term.loadHistoryFromLocalStorage( serverDatabase.initialHistory );
-    }
-    output( [ header, msg ] ).then( () => applySFX() );
-    $( ".prompt" ).html( promptText );
->>>>>>> parent of 98cdc6f (Update kernel.js)
 }
 
 /**
@@ -516,7 +471,7 @@ system = {
                 resolve( [ "Usage:", "> read x", "If you're logged in you can read your mail messages if any. Provide the message index as x." ] );
             } else if ( args[ 0 ] === "readlog" ) {
                 resolve( [ "Usage:", "> readlog x", "Reads a specific log entry by its index number from the 'logs' command." ] );
-            } else if ( args[ 0 ] === "ssh" ) {
+            } else if ( args[ 0 ] === "scan" ) {
                 resolve( [ "Usage:", "> scan [object-id]", "Scans a designated object in the environment for more information." ] );
             } else if ( args[ 0 ] === "ssh" ) {
                 resolve( [

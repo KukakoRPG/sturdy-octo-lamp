@@ -35,10 +35,19 @@ function debugObject( obj ) {
  *
  * @param {String} msg A message to be showed when done
  */
-function setHeader( msg ) {
-    // Setting correct header icon and terminal name
-    const promptText = `[${ userDatabase.userName }@${ serverDatabase.terminalID }] # `;
+function loadImage(url) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error(`Failed to load image at ${url}`));
+        img.src = url;
+    });
+}
 
+function setHeader( msg ) {
+    document.body.classList.remove('loaded');
+
+    const promptText = `[${ userDatabase.userName }@${ serverDatabase.terminalID }] # `;
     initDateObject();
     const yearHex = parseInt( serverDate.year, 10 ).toString( 16 ).toUpperCase().padStart( 4, "0" );
     const monthHex = parseInt( serverDate.month, 10 ).toString( 16 ).toUpperCase().padStart( 2, "0" );
@@ -50,7 +59,15 @@ function setHeader( msg ) {
     const dateStr = `${ yearHex }${ monthHex }${ dayHex }${ hexTime }`;
     const imgUrl = `config/network/${ serverDatabase.serverAddress }/${ serverDatabase.iconName }`;
     const imgSize = serverDatabase.iconSize || 100;
-    const header = `
+
+    const imagesToLoad = [loadImage(imgUrl)];
+
+    if (serverDatabase.serverAddress === 'test-damage') {
+        imagesToLoad.push(loadImage('src/imgs/screen-crack.png'));
+    }
+
+    Promise.all(imagesToLoad).then(() => {
+        const header = `
     <img src="${ imgUrl }" width="${ imgSize }" height="${ imgSize }"
          style="float: left; padding-right: 10px" class="${ serverDatabase.iconClass || "" }">
     <h2 style="letter-spacing: 4px">${ serverDatabase.serverName }</h2>
@@ -59,34 +76,35 @@ function setHeader( msg ) {
     <p>Enter "help" for more information.</p>
     <div style="clear: both;"></div>
     `;
-    // Screen damage overlay logic
-    const overlayId = 'damage-overlay';
-    if (serverDatabase.serverAddress === 'test-damage') {
-        if (!document.getElementById(overlayId)) {
-            const overlay = document.createElement('div');
-            overlay.id = overlayId;
-            overlay.className = 'screen-damage';
-            // Always append as last child so it is above all other content
-            document.body.appendChild(overlay);
-        } else {
-            // Move overlay to end if not already last
-            const overlay = document.getElementById(overlayId);
-            if (overlay !== document.body.lastElementChild) {
+
+        const overlayId = 'damage-overlay';
+        if (serverDatabase.serverAddress === 'test-damage') {
+            if (!document.getElementById(overlayId)) {
+                const overlay = document.createElement('div');
+                overlay.id = overlayId;
+                overlay.className = 'screen-damage';
                 document.body.appendChild(overlay);
+            } else {
+                const overlay = document.getElementById(overlayId);
+                if (overlay !== document.body.lastElementChild) {
+                    document.body.appendChild(overlay);
+                }
             }
+        } else {
+            const overlay = document.getElementById(overlayId);
+            if (overlay) overlay.remove();
         }
-    } else {
-        const overlay = document.getElementById(overlayId);
-        if (overlay) overlay.remove();
-    }
-    // Clear content:
-    output_.innerHTML = "";
-    cmdLine_.value = "";
-    if ( term ) {
-        term.loadHistoryFromLocalStorage( serverDatabase.initialHistory );
-    }
-    output( [ header, msg ] ).then( () => applySFX() );
-    $( ".prompt" ).html( promptText );
+
+        output_.innerHTML = "";
+        cmdLine_.value = "";
+        if ( term ) {
+            term.loadHistoryFromLocalStorage( serverDatabase.initialHistory );
+        }
+        output( [ header, msg ] ).then( () => applySFX() );
+        $( ".prompt" ).html( promptText );
+
+        document.body.classList.add('loaded');
+    });
 }
 
 /**
@@ -328,7 +346,9 @@ kernel.init = function init( cmdLineContainer, outputContainer ) {
         $.when(
             $.get( "config/software.json", ( softwareData ) => {
                 softwareInfo = softwareData;
-                kernel.connectToServer( defaultServerAddress );
+                kernel.connectToServer( defaultServerAddress ).then(() => {
+                    document.body.classList.add('loaded');
+                });
             } )
         )
             .done( () => {

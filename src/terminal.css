@@ -4,13 +4,22 @@
   top: 0; left: 0; width: 100vw; height: 100vh;
   pointer-events: none;
   z-index: 9999;
+<<<<<<< HEAD
   background: url('../src/imgs/screen-crack.png') center center/cover no-repeat;
   opacity: 0.8;
+=======
+  background: url('src/imgs/screen-crack.png') center center/cover no-repeat;
+  opacity: 0.5;
+>>>>>>> parent of bf6750d (Update terminal.css)
   mix-blend-mode: lighten;
 }
 @font-face {
   font-family: 'DejaVu Sans Mono';
+<<<<<<< HEAD
   src: url('../src/fonts/NotoSansMono-Regular.ttf') format('truetype');
+=======
+  src: url('../fonts/DejaVuSansMono.ttf') format('truetype');
+>>>>>>> parent of bf6750d (Update terminal.css)
   font-weight: normal;
   font-style: normal;
 

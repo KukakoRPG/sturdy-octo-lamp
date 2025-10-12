@@ -9,8 +9,8 @@
   mix-blend-mode: lighten;
 }
 @font-face {
-  font-family: 'Noto Sans Mono';
-  src: url('../src/fonts/NotoSansMono-Regular.ttf') format('truetype');
+  font-family: 'DejaVu Sans Mono', monospace;
+  src: url('../src/fonts/DejaVuSansMono.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,7 +24,6 @@ html, body {
 }
 body {
   font-size: 11pt;
-  font-family: 'DejaVu Sans Mono', monospace;
   color: white;
   background-color: black;
   opacity: 0;

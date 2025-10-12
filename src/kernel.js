@@ -80,6 +80,9 @@ function setHeader( msg ) {
         const overlayId = 'damage-overlay';
         const body = document.body;
 
+        // Always add scanlines for all servers
+        body.classList.add('scanlines');
+
         if (serverDatabase.serverAddress === 'test-damage') {
             if (!document.getElementById(overlayId)) {
                 const overlay = document.createElement('div');
@@ -92,13 +95,13 @@ function setHeader( msg ) {
                     body.appendChild(overlay);
                 }
             }
-            body.classList.add('scanlines', 'flicker');
+            body.classList.add('flicker');
         } else {
             const overlay = document.getElementById(overlayId);
             if (overlay) {
                 overlay.remove();
             }
-            body.classList.remove('scanlines', 'flicker');
+            body.classList.remove('flicker');
         }
 
         output_.innerHTML = "";

@@ -66,7 +66,14 @@ function setHeader( msg ) {
             const overlay = document.createElement('div');
             overlay.id = overlayId;
             overlay.className = 'screen-damage';
+            // Always append as last child so it is above all other content
             document.body.appendChild(overlay);
+        } else {
+            // Move overlay to end if not already last
+            const overlay = document.getElementById(overlayId);
+            if (overlay !== document.body.lastElementChild) {
+                document.body.appendChild(overlay);
+            }
         }
     } else {
         const overlay = document.getElementById(overlayId);

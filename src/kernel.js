@@ -93,28 +93,33 @@ function setHeader( msg ) {
 =======
     // Screen damage overlay logic
     const overlayId = 'damage-overlay';
+    const body = document.body;
+
     if (serverDatabase.serverAddress === 'test-damage') {
         if (!document.getElementById(overlayId)) {
             const overlay = document.createElement('div');
             overlay.id = overlayId;
             overlay.className = 'screen-damage';
-            // Always append as last child so it is above all other content
-            document.body.appendChild(overlay);
+            body.appendChild(overlay);
         } else {
-            // Move overlay to end if not already last
             const overlay = document.getElementById(overlayId);
             if (overlay !== document.body.lastElementChild) {
+<<<<<<< HEAD
 <<<<<<< HEAD
                 body.appendChild(overlay);
 >>>>>>> parent of 98cdc6f (Update kernel.js)
 =======
                 document.body.appendChild(overlay);
 >>>>>>> parent of b7cea82 (Scanlines test)
+=======
+                body.appendChild(overlay);
+>>>>>>> parent of 98cdc6f (Update kernel.js)
             }
         } else {
             const overlay = document.getElementById(overlayId);
             if (overlay) overlay.remove();
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -132,9 +137,15 @@ function setHeader( msg ) {
         body.classList.add('scanlines', 'flicker');
 =======
 >>>>>>> parent of b7cea82 (Scanlines test)
+=======
+        body.classList.add('scanlines', 'flicker');
+>>>>>>> parent of 98cdc6f (Update kernel.js)
     } else {
         const overlay = document.getElementById(overlayId);
-        if (overlay) overlay.remove();
+        if (overlay) {
+            overlay.remove();
+        }
+        body.classList.remove('scanlines', 'flicker');
     }
     // Clear content:
     output_.innerHTML = "";

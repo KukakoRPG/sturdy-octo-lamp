@@ -12,13 +12,7 @@ function mute(args) {
     } else if (action === "off") {
         window.terminalMuteState = false;
     }
-    // Always update audio elements' muted state
-    setTimeout(function() {
-        ["ambient-audio", "key-audio", "output-ambient-audio"].forEach(id => {
-            let el = document.getElementById(id);
-            if (el) el.muted = window.terminalMuteState;
-        });
-    }, 0);
+    // Do not update audio elements directly; terminal.js polling will handle it
     return window.terminalMuteState
         ? "All terminal sounds are now muted."
         : (prev ? "All terminal sounds are now unmuted." : "Terminal sounds remain unmuted.");

@@ -66,7 +66,7 @@ function setHeader( msg ) {
         imagesToLoad.push(loadImage('src/imgs/screen-crack.png'));
     }
 
-    Promise.all(imagesToLoad).then(() => {
+    return Promise.all(imagesToLoad).then(() => {
         const header = `
     <img src="${ imgUrl }" width="${ imgSize }" height="${ imgSize }"
          style="float: left; padding-right: 10px" class="${ serverDatabase.iconClass || "" }">
@@ -278,8 +278,7 @@ kernel.connectToServer = function connectToServer( serverAddress, userName, pass
                 $.get( `config/network/${ serverInfo.serverAddress }/scannables.json`, ( scannables ) => {
                     scannableList = scannables;
                 } ).fail( () => scannableList = {} ); // Reset if not found
-                setHeader( "Connection successful" );
-                resolve();
+                setHeader( "Connection successful" ).then(resolve);
             } else if ( userName ) {
                 $.get( `config/network/${ serverInfo.serverAddress }/userlist.json`, ( users ) => {
                     const matchingUser = users.find( ( user ) => user.userId === userName );
@@ -303,8 +302,7 @@ kernel.connectToServer = function connectToServer( serverAddress, userName, pass
                     $.get( `config/network/${ serverInfo.serverAddress }/scannables.json`, ( scannables ) => {
                         scannableList = scannables;
                     } ).fail( () => scannableList = {} ); // Reset if not found
-                    setHeader( "Connection successful" );
-                    resolve();
+                    setHeader( "Connection successful" ).then(resolve);
                 } ).fail( () => {
                     reject( new AddressNotFoundError( serverAddress ) );
                 } );
@@ -346,9 +344,7 @@ kernel.init = function init( cmdLineContainer, outputContainer ) {
         $.when(
             $.get( "config/software.json", ( softwareData ) => {
                 softwareInfo = softwareData;
-                kernel.connectToServer( defaultServerAddress ).then(() => {
-                    document.body.classList.add('loaded');
-                });
+                kernel.connectToServer( defaultServerAddress );
             } )
         )
             .done( () => {

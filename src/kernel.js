@@ -76,6 +76,7 @@ function setHeader( msg ) {
     <p>Enter "help" for more information.</p>
     <div style="clear: both;"></div>
     `;
+<<<<<<< HEAD
 
         const overlayId = 'damage-overlay';
         if (serverDatabase.serverAddress === 'test-damage') {
@@ -89,11 +90,28 @@ function setHeader( msg ) {
                 if (overlay !== document.body.lastElementChild) {
                     document.body.appendChild(overlay);
                 }
+=======
+    // Screen damage overlay logic
+    const overlayId = 'damage-overlay';
+    const body = document.body;
+
+    if (serverDatabase.serverAddress === 'test-damage') {
+        if (!document.getElementById(overlayId)) {
+            const overlay = document.createElement('div');
+            overlay.id = overlayId;
+            overlay.className = 'screen-damage';
+            body.appendChild(overlay);
+        } else {
+            const overlay = document.getElementById(overlayId);
+            if (overlay !== document.body.lastElementChild) {
+                body.appendChild(overlay);
+>>>>>>> parent of 98cdc6f (Update kernel.js)
             }
         } else {
             const overlay = document.getElementById(overlayId);
             if (overlay) overlay.remove();
         }
+<<<<<<< HEAD
 
         output_.innerHTML = "";
         cmdLine_.value = "";
@@ -105,6 +123,24 @@ function setHeader( msg ) {
 
         document.body.classList.add('loaded');
     });
+=======
+        body.classList.add('scanlines', 'flicker');
+    } else {
+        const overlay = document.getElementById(overlayId);
+        if (overlay) {
+            overlay.remove();
+        }
+        body.classList.remove('scanlines', 'flicker');
+    }
+    // Clear content:
+    output_.innerHTML = "";
+    cmdLine_.value = "";
+    if ( term ) {
+        term.loadHistoryFromLocalStorage( serverDatabase.initialHistory );
+    }
+    output( [ header, msg ] ).then( () => applySFX() );
+    $( ".prompt" ).html( promptText );
+>>>>>>> parent of 98cdc6f (Update kernel.js)
 }
 
 /**
@@ -338,8 +374,6 @@ kernel.init = function init( cmdLineContainer, outputContainer ) {
     return new Promise( ( resolve, reject ) => {
         cmdLine_ = document.querySelector( cmdLineContainer );
         output_ = document.querySelector( outputContainer );
-
-        document.body.classList.add('scanlines', 'flicker');
 
         $.when(
             $.get( "config/software.json", ( softwareData ) => {

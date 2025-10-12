@@ -806,11 +806,14 @@ function allowedSoftwares() {
         const program = softwareInfo[ app ];
         if ( program === null ) {
             softwares[ app ] = null;
-        } else if (
-            ( !program.location || program.location.includes( serverDatabase.serverAddress ) ) &&
-            ( !program.protection || program.protection.includes( userDatabase.userId ) )
-        ) {
-            softwares[ app ] = program;
+        } else {
+            // Allow if location is ["*"] (global), or matches current server, or is missing
+            const isGlobal = Array.isArray(program.location) && program.location.includes("*");
+            const locationOk = isGlobal || !program.location || program.location.includes(serverDatabase.serverAddress);
+            const protectionOk = !program.protection || program.protection.includes(userDatabase.userId);
+            if (locationOk && protectionOk) {
+                softwares[app] = program;
+            }
         }
     }
     return softwares;

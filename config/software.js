@@ -12,11 +12,13 @@ function mute(args) {
     } else if (action === "off") {
         window.terminalMuteState = false;
     }
-    // Actually mute/unmute all audio elements
-    ["ambient-audio", "key-audio", "output-ambient-audio"].forEach(id => {
-        let el = document.getElementById(id);
-        if (el) el.muted = window.terminalMuteState;
-    });
+    // Always update audio elements' muted state
+    setTimeout(function() {
+        ["ambient-audio", "key-audio", "output-ambient-audio"].forEach(id => {
+            let el = document.getElementById(id);
+            if (el) el.muted = window.terminalMuteState;
+        });
+    }, 0);
     return window.terminalMuteState
         ? "All terminal sounds are now muted."
         : (prev ? "All terminal sounds are now unmuted." : "Terminal sounds remain unmuted.");

@@ -39,7 +39,8 @@ function Terminal() {
             cmdLine_.addEventListener( "keydown", tabSuggestionHandler_ );
             // Play key sound on keydown (except modifier keys)
             cmdLine_.addEventListener( "keydown", function(e) {
-                if (!window.terminalMuteState && e.key.length === 1) {
+                // Play key sound for all printable keys and Backspace
+                if (!window.terminalMuteState && (e.key.length === 1 || e.key === "Backspace")) {
                     keyAudio.currentTime = 0;
                     keyAudio.play().catch(()=>{});
                 }

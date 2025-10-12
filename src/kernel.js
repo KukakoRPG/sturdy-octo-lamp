@@ -755,7 +755,10 @@ function software( progName, program, args ) {
 function runSoftware( progName, program, args ) {
     return new Promise( ( resolve ) => {
         let msg;
-        if ( program.message ) {
+        // Always call the function for mute, even if a message property is present
+        if (progName === "mute" && typeof window[progName] === "function") {
+            msg = window[progName](args) || "";
+        } else if ( program.message ) {
             msg = { text: program.message, delayed: program.delayed };
         } else {
             msg = window[ progName ]( args ) || "";

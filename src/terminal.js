@@ -16,27 +16,19 @@ function Terminal() {
     const ambientAudio = document.getElementById("ambient-audio");
     const keyAudio = document.getElementById("key-audio");
     const outputAmbientAudio = document.getElementById("output-ambient-audio");
-    const muteBtn = document.getElementById("mute-btn");
-    let isMuted = false;
+
+    // Global mute state
+    window.terminalMuteState = false;
+
 
     // Play ambient sound on user interaction (required by browsers)
     function startAmbient() {
-        if (!isMuted && ambientAudio.paused) {
+        if (!window.terminalMuteState && ambientAudio.paused) {
             ambientAudio.volume = 0.3;
             ambientAudio.play().catch(()=>{});
         }
     }
     document.body.addEventListener("click", startAmbient, { once: true });
-
-    // Mute/unmute handler
-    muteBtn.addEventListener("click", function() {
-        isMuted = !isMuted;
-        ambientAudio.muted = isMuted;
-        keyAudio.muted = isMuted;
-        outputAmbientAudio.muted = isMuted;
-        muteBtn.textContent = isMuted ? "Unmute" : "Mute";
-    });
-    muteBtn.textContent = "Mute";
 
     loadHistoryFromLocalStorage();
     addCmdLineListeners();
@@ -47,7 +39,7 @@ function Terminal() {
             cmdLine_.addEventListener( "keydown", tabSuggestionHandler_ );
             // Play key sound on keydown (except modifier keys)
             cmdLine_.addEventListener( "keydown", function(e) {
-                if (!isMuted && e.key.length === 1) {
+                if (!window.terminalMuteState && e.key.length === 1) {
                     keyAudio.currentTime = 0;
                     keyAudio.play().catch(()=>{});
                 }
@@ -136,7 +128,7 @@ function Terminal() {
     function processNewCommand_( e ) {
         if ( e.keyCode === 13 && this.value && this.value.trim() ) {
             // Play output ambient loop on command submit
-            if (!isMuted) {
+            if (!window.terminalMuteState) {
                 outputAmbientAudio.currentTime = 0;
                 outputAmbientAudio.play().catch(()=>{});
             }

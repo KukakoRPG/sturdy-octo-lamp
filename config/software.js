@@ -1,3 +1,26 @@
+function mute(args) {
+    let action = (args[0] || "toggle").toLowerCase();
+    if (action !== "on" && action !== "off" && action !== "toggle") {
+        return "Usage: mute [on|off|toggle]";
+    }
+    if (typeof window.terminalMuteState === "undefined") window.terminalMuteState = false;
+    let prev = window.terminalMuteState;
+    if (action === "toggle") {
+        window.terminalMuteState = !window.terminalMuteState;
+    } else if (action === "on") {
+        window.terminalMuteState = true;
+    } else if (action === "off") {
+        window.terminalMuteState = false;
+    }
+    // Actually mute/unmute all audio elements
+    ["ambient-audio", "key-audio", "output-ambient-audio"].forEach(id => {
+        let el = document.getElementById(id);
+        if (el) el.muted = window.terminalMuteState;
+    });
+    return window.terminalMuteState
+        ? "All terminal sounds are now muted."
+        : (prev ? "All terminal sounds are now unmuted." : "Terminal sounds remain unmuted.");
+}
 /*
  This file contains the logic for custom software programs
  that perform more complex actions than just displaying some text or HTML.

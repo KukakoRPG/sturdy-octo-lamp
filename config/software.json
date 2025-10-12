@@ -112,5 +112,9 @@
     },
     "scan": {
         "help": "Scans a designated object in the environment for more information. Usage: scan [object-id]"
+    },
+    "mute": {
+        "help": "Toggles all terminal sounds on or off. Usage: mute [on|off|toggle]",
+        "message": ["Toggles terminal sound effects."]
     }
 }

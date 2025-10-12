@@ -66,15 +66,13 @@ function setHeader( msg ) {
             const overlay = document.createElement('div');
             overlay.id = overlayId;
             overlay.className = 'screen-damage';
-            // Always insert as first child of container so it is within the same stacking context
-            const container = document.getElementById('container');
-            container.insertBefore(overlay, container.firstChild);
+            // Always append as last child so it is above all other content
+            document.body.appendChild(overlay);
         } else {
-            // Move overlay to start if not already first
+            // Move overlay to end if not already last
             const overlay = document.getElementById(overlayId);
-            const container = document.getElementById('container');
-            if (overlay !== container.firstElementChild) {
-                container.insertBefore(overlay, container.firstChild);
+            if (overlay !== document.body.lastElementChild) {
+                document.body.appendChild(overlay);
             }
         }
     } else {
@@ -433,7 +431,7 @@ system = {
             } else if ( args[ 0 ] === "htcencode" ) {
                 resolve( [ "Usage:", "> htcencode YYYY-MM-DD HH:MM:SS", "Converts a standard date and time to a full HTC timestamp." ] );
             } else if ( args[ 0 ] === "history" ) {
-                resolve( [ "Usage:", "> history", "The history command will list all the commands you alread typed in this terminal." ] );
+                resolve( [ "Usage:", "> history", "The history command will list all the commands you alread typed in this. Commenting out to prevent spoilers for players!" ] );
             } else if ( args[ 0 ] === "login" ) {
                 resolve( [ "Usage:", "> login username:password", "Switch account: log in as another registered user on the server, to access your data files and messages." ] );
             } else if ( args[ 0 ] === "mail" ) {

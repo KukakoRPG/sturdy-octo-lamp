@@ -115,7 +115,6 @@
     },
     "mute": {
         "location": ["*"],
-        "help": "Toggles all terminal sounds on or off. Usage: mute [on|off|toggle]",
-        "message": ["Toggles terminal sound effects."]
+        "help": "Toggles all terminal sounds on or off. Usage: mute [on|off|toggle]"
     }
 }

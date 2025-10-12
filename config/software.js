@@ -12,8 +12,6 @@ function mute(args) {
     } else if (action === "off") {
         window.terminalMuteState = false;
     }
-    // Debug: log mute state after command
-    console.log('[DEBUG] mute command set window.terminalMuteState =', window.terminalMuteState);
     // Do not update audio elements directly; terminal.js polling will handle it
     return window.terminalMuteState
         ? "All terminal sounds are now muted."

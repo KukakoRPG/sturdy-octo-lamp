@@ -37,14 +37,6 @@ function Terminal() {
         if (ambientAudio) ambientAudio.muted = window.terminalMuteState;
         if (keyAudio) keyAudio.muted = window.terminalMuteState;
         if (outputAmbientAudio) outputAmbientAudio.muted = window.terminalMuteState;
-        // Debug: log mute state and audio element states
-        if (window.terminalMuteState !== syncMuteState._last) {
-            console.log('[DEBUG] Mute state changed:', window.terminalMuteState);
-            if (ambientAudio) console.log('[DEBUG] ambientAudio.muted:', ambientAudio.muted);
-            if (keyAudio) console.log('[DEBUG] keyAudio.muted:', keyAudio.muted);
-            if (outputAmbientAudio) console.log('[DEBUG] outputAmbientAudio.muted:', outputAmbientAudio.muted);
-            syncMuteState._last = window.terminalMuteState;
-        }
     }
     setInterval(syncMuteState, 200);
 

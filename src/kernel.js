@@ -59,6 +59,19 @@ function setHeader( msg ) {
     <p>Enter "help" for more information.</p>
     <div style="clear: both;"></div>
     `;
+    // Screen damage overlay logic
+    const overlayId = 'damage-overlay';
+    if (serverDatabase.serverAddress === 'test-damage') {
+        if (!document.getElementById(overlayId)) {
+            const overlay = document.createElement('div');
+            overlay.id = overlayId;
+            overlay.className = 'screen-damage';
+            document.body.appendChild(overlay);
+        }
+    } else {
+        const overlay = document.getElementById(overlayId);
+        if (overlay) overlay.remove();
+    }
     // Clear content:
     output_.innerHTML = "";
     cmdLine_.value = "";

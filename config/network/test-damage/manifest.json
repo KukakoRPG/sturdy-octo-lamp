@@ -1,0 +1,16 @@
+{
+  "serverAddress": "test-damage",
+  "serverName": "Test Damage Terminal",
+  "terminalID": "TEST-DMG-01",
+  "iconName": "icon.png",
+  "iconSize": 100,
+  "iconClass": "",
+  "headerExtraHTML": "<span class='warning-text'>WARNING: SCREEN DAMAGE DETECTED</span>",
+  "defaultUser": {
+    "userId": "guest0",
+    "userName": "Guest",
+    "password": "",
+    "role": "crew"
+  },
+  "initialHistory": {}
+}

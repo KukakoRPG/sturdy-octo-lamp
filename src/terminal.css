@@ -1,3 +1,13 @@
+/* Screen damage overlay for damaged terminals */
+.screen-damage {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  background: url('src/imgs/screen-crack.png') center center/cover no-repeat;
+  opacity: 0.5;
+  mix-blend-mode: lighten;
+}
 @font-face {
   font-family: 'DejaVu Sans Mono';
   src: url('../fonts/DejaVuSansMono.ttf') format('truetype');

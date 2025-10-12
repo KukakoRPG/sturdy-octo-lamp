@@ -5,7 +5,7 @@
   pointer-events: none;
   z-index: 2147483647;
   background: url('../src/imgs/screen-crack.png') center center/cover no-repeat;
-  opacity: 0.5;
+  opacity: 0.25;
   mix-blend-mode: lighten;
 }
 @font-face {

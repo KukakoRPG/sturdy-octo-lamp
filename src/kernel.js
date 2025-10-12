@@ -61,27 +61,23 @@ function setHeader( msg ) {
     `;
     // Screen damage overlay logic
     const overlayId = 'damage-overlay';
-    const body = document.body;
-
     if (serverDatabase.serverAddress === 'test-damage') {
         if (!document.getElementById(overlayId)) {
             const overlay = document.createElement('div');
             overlay.id = overlayId;
             overlay.className = 'screen-damage';
-            body.appendChild(overlay);
+            // Always append as last child so it is above all other content
+            document.body.appendChild(overlay);
         } else {
+            // Move overlay to end if not already last
             const overlay = document.getElementById(overlayId);
             if (overlay !== document.body.lastElementChild) {
-                body.appendChild(overlay);
+                document.body.appendChild(overlay);
             }
         }
-        body.classList.add('scanlines', 'flicker');
     } else {
         const overlay = document.getElementById(overlayId);
-        if (overlay) {
-            overlay.remove();
-        }
-        body.classList.remove('scanlines', 'flicker');
+        if (overlay) overlay.remove();
     }
     // Clear content:
     output_.innerHTML = "";
@@ -326,6 +322,8 @@ kernel.init = function init( cmdLineContainer, outputContainer ) {
     return new Promise( ( resolve, reject ) => {
         cmdLine_ = document.querySelector( cmdLineContainer );
         output_ = document.querySelector( outputContainer );
+
+        document.body.classList.add('scanlines', 'flicker');
 
         $.when(
             $.get( "config/software.json", ( softwareData ) => {

@@ -11,13 +11,47 @@ let history_ = [];
 let histpos_ = 0;
 
 function Terminal() {
+
+    // Sound elements
+    const ambientAudio = document.getElementById("ambient-audio");
+    const keyAudio = document.getElementById("key-audio");
+    const outputAmbientAudio = document.getElementById("output-ambient-audio");
+    const muteBtn = document.getElementById("mute-btn");
+    let isMuted = false;
+
+    // Play ambient sound on user interaction (required by browsers)
+    function startAmbient() {
+        if (!isMuted && ambientAudio.paused) {
+            ambientAudio.volume = 0.3;
+            ambientAudio.play().catch(()=>{});
+        }
+    }
+    document.body.addEventListener("click", startAmbient, { once: true });
+
+    // Mute/unmute handler
+    muteBtn.addEventListener("click", function() {
+        isMuted = !isMuted;
+        ambientAudio.muted = isMuted;
+        keyAudio.muted = isMuted;
+        outputAmbientAudio.muted = isMuted;
+        muteBtn.textContent = isMuted ? "Unmute" : "Mute";
+    });
+    muteBtn.textContent = "Mute";
+
     loadHistoryFromLocalStorage();
     addCmdLineListeners();
 
     function addCmdLineListeners() {
-        cmdLine_.addEventListener( "keydown", historyHandler_ );
-        cmdLine_.addEventListener( "keydown", processNewCommand_ );
-        cmdLine_.addEventListener( "keydown", tabSuggestionHandler_ );
+            cmdLine_.addEventListener( "keydown", historyHandler_ );
+            cmdLine_.addEventListener( "keydown", processNewCommand_ );
+            cmdLine_.addEventListener( "keydown", tabSuggestionHandler_ );
+            // Play key sound on keydown (except modifier keys)
+            cmdLine_.addEventListener( "keydown", function(e) {
+                if (!isMuted && e.key.length === 1) {
+                    keyAudio.currentTime = 0;
+                    keyAudio.play().catch(()=>{});
+                }
+            });
     }
 
     function removeCmdLineListeners() {
@@ -101,6 +135,11 @@ function Terminal() {
      */
     function processNewCommand_( e ) {
         if ( e.keyCode === 13 && this.value && this.value.trim() ) {
+            // Play output ambient loop on command submit
+            if (!isMuted) {
+                outputAmbientAudio.currentTime = 0;
+                outputAmbientAudio.play().catch(()=>{});
+            }
             // Save shell history but avoids duplicates:
             if ( history_.length === 0 || history_[ history_.length - 1 ].trim() !== this.value.trim() ) {
                 history_[ history_.length ] = this.value;

@@ -258,10 +258,11 @@ function Terminal() {
 /**
  * The `Document.ready` function to initialize everything.
  */
-$( () => {
+
+document.addEventListener('DOMContentLoaded', function() {
     // Initializing Terminal Object
     kernel.init( "#input-line .cmdline", "#container output" )
         .then( () => {
             term = new Terminal();
         } );
-} );
+});
